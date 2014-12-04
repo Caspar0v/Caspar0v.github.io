@@ -75,6 +75,7 @@ function saveGame() {
 	    coin: coin,
 	    paper: paper,
 	    supermarket: supermarket,
+	    power: power
 	}
 	localStorage.setItem("save",JSON.stringify(save));
 }
@@ -87,6 +88,7 @@ function loadGame(){
 	if (typeof loadgame.coin !== "undefined") coin = loadgame.coin;
 	if (typeof loadgame.paper !== "undefined") paper = loadgame.paper;
 	if (typeof loadgame.supermarket !== "undefined") supermarket = loadgame.supermarket;
+	if (typeof loadgame.power !== "undefined") power = loadgame.power;
 	document.getElementById('coin').innerHTML = coin;
 	document.getElementById('paper').innerHTML = paper;
 	document.getElementById('supermarket').innerHTML = supermarket;
@@ -94,6 +96,8 @@ function loadGame(){
     document.getElementById('paperCost').innerHTML = nextPaperCost;
 	var nextSupermarketCost = Math.floor(50 * Math.pow(1.5, supermarket));
 	document.getElementById('supermarketCost').innerHTML = nextSupermarketCost;
+	powerCost = Math.floor(20 * Math.pow(1.3, power));
+	document.getElementById("powerCost").innerHTML = powerCost;
 }
 
 function delSave(){
