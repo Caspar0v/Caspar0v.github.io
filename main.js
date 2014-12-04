@@ -1,4 +1,6 @@
-//currency ---------------------------------------------
+////////////
+//currency//
+////////////
 var coin = 0;
 
 function coinClick(number){
@@ -6,7 +8,9 @@ function coinClick(number){
     document.getElementById("coin").innerHTML = coin;
 };
 
-//paperrounds ---------------------------------------------
+///////////////
+//paperrounds//
+///////////////
 var paper = 0;
 
 
@@ -22,7 +26,9 @@ var paperCost = Math.floor(10 * Math.pow(1.3, paper));     //works out the cost 
     document.getElementById('paperCost').innerHTML = nextPaperCost;  //updates the cursor cost for the user
 };
 
-//supermarket---------------------------------------------
+///////////////
+//supermarket//
+///////////////
 var supermarket = 0;
 
 function buySupermarket(number) {
@@ -38,8 +44,9 @@ var supermarketCost = Math.floor(50 * Math.pow(1.5, supermarket));
 	
 };
 
-//SaveGame ---------------------------------------------
-
+////////////
+//SaveGame//
+////////////
 function saveGame() {
 	var save = {
 	    coin: coin,
@@ -49,8 +56,9 @@ function saveGame() {
 	localStorage.setItem("save",JSON.stringify(save));
 }
 
-//LoadGame ---------------------------------------------
-
+////////////
+//LoadGame//
+////////////
 function loadGame(){
 	var loadgame = JSON.parse(localStorage.getItem("save"));
 	if (typeof loadgame.coin !== "undefined") coin = loadgame.coin;
@@ -69,8 +77,9 @@ function delSave(){
 	localStorage.removeItem("save")
 }
 
-
-//interval ---------------------------------------------
+/////////////
+//intervals//
+/////////////
 window.setInterval(function(){
 
 	coinClick(paper);
@@ -78,7 +87,11 @@ window.setInterval(function(){
 	
 }, 1000);
 
-
+window.setInterval(function(){
+	
+	saveGame();
+	
+}, 10000);
 
 
 
