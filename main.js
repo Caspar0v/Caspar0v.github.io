@@ -44,7 +44,7 @@ function saveGame() {
 	var save = {
 	    coin: coin,
 	    paper: paper,
-	    supermarket: supermarket
+	    supermarket: supermarket,
 	}
 	localStorage.setItem("save",JSON.stringify(save));
 }
@@ -59,6 +59,10 @@ function loadGame(){
 	document.getElementById('coin').innerHTML = coin;
 	document.getElementById('paper').innerHTML = paper;
 	document.getElementById('supermarket').innerHTML = supermarket;
+	var nextPaperCost = Math.floor(10 * Math.pow(1.3, paper));
+    document.getElementById('paperCost').innerHTML = nextPaperCost;
+	var nextSupermarketCost = Math.floor(50 * Math.pow(1.5, supermarket));
+	document.getElementById('supermarketCost').innerHTML = nextSupermarketCost;
 }
 
 function delSave(){
