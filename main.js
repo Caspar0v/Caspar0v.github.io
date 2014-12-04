@@ -4,7 +4,7 @@
 var coin = 0;
 
 function coinClick(number){
-    coin = coin + number;
+    coin = coin + (number * power);
     document.getElementById("coin").innerHTML = coin;
 };
 
@@ -48,6 +48,7 @@ var supermarketCost = Math.floor(50 * Math.pow(1.5, supermarket));
 //click power//
 ///////////////
 var powerCost = 20;
+var power = 1;
 
 	function clickPower(number){
 		if (coin >= powerCost) {
