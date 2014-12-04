@@ -8,6 +8,11 @@ function coinClick(number){
     document.getElementById("coin").innerHTML = coin;
 };
 
+function coinAuto(number){
+	coin = coin + number;
+    document.getElementById("coin").innerHTML = coin;
+};
+
 ///////////////
 //paperrounds//
 ///////////////
@@ -100,8 +105,8 @@ function delSave(){
 /////////////
 window.setInterval(function(){
 
-	coinClick(paper);
-	coinClick(supermarket * 5);
+	coinAuto(paper);
+	coinAuto(supermarket * 5);
 	
 }, 1000);
 
