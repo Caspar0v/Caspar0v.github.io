@@ -122,5 +122,14 @@ window.setInterval(function(){
 
 
 
-
+/*
+ * To Do:
+ * Xperience ! Ability powers etc.
+ * More buildings/jobs.
+ * ART !
+ * TextLog (pop ups)
+ * random events !
+ * design website
+ * 
+ */
 
