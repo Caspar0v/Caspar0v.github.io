@@ -72,6 +72,16 @@ var power = 1;
 ////////////
 var autoSave = true;
 var autoSaveTime = 10;
+
+autoSaveInterval=setInterval(function() {
+	autoSaveTime--;
+	if(autoSaveTime == 0) {
+		autoSaveTime = 10;
+		console.log("saved auto");
+		saveGame("local");
+	}
+},1000);
+
 function saveGame(how) {
 	if(how=="local"){
 	var save = {
