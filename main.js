@@ -130,6 +130,7 @@ function loadGame(){
 	document.getElementById('coin').innerHTML = coin;
 	document.getElementById('paper').innerHTML = paper;
 	document.getElementById('supermarket').innerHTML = supermarket;
+	document.getElementById("power").innerHTML = power;
 	var nextPaperCost = Math.floor(10 * Math.pow(1.3, paper));
     document.getElementById('paperCost').innerHTML = nextPaperCost;
 	var nextSupermarketCost = Math.floor(50 * Math.pow(1.5, supermarket));
