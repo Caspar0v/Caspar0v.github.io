@@ -99,7 +99,7 @@ function saveGame(how) {
 		if(autoSave){
 			autoSave = false;
 			if(typeof autoSaveInterval !== "undefined")clearInterval(autoSaveInterval);
-			autoState = !autoSave;
+			autoState = "False";
 			document.getElementById("autoState").innerHTML = autoState;
 		}
 		else{
@@ -112,7 +112,7 @@ function saveGame(how) {
 					saveGame("local");
 				}
 			},1000);
-			autoState = !autoSave;
+			autoState = "True";
 			document.getElementById("autoState").innerHTML = autoState;
 		}
 	}
