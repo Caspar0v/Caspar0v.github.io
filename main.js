@@ -106,7 +106,7 @@ function delSave(){
 
 var bool;
 
-function autoSwith(number){
+function autoSwitch(number){
 	bool = !bool;
 	console.log(bool);
 }
