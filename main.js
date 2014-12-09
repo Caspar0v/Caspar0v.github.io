@@ -70,6 +70,7 @@ var power = 1;
 ////////////
 //SaveGame//
 ////////////
+var autoSave = true;
 var autoSaveTime = 10;
 function saveGame(how) {
 	if(how=="local"){
@@ -80,6 +81,7 @@ function saveGame(how) {
 	    power: power
 	}
 	localStorage.setItem("save",JSON.stringify(save));
+	console.log("Save local");
 	}
 	else if(how=="autoSave"){
 		if(autoSave){
@@ -92,7 +94,7 @@ function saveGame(how) {
 				autoSaveTime--;
 				if(autoSaveTime == 0) {
 					autoSaveTime = 10;
-					console.log("saved");
+					console.log("saved auto");
 					saveGame("local");
 				}
 			},1000);
