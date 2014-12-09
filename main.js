@@ -72,6 +72,7 @@ var power = 1;
 ////////////
 var autoSave = true;
 var autoSaveTime = 10;
+var autoState;
 
 autoSaveInterval=setInterval(function() {
 	autoSaveTime--;
@@ -98,6 +99,8 @@ function saveGame(how) {
 		if(autoSave){
 			autoSave = false;
 			if(typeof autoSaveInterval !== "undefined")clearInterval(autoSaveInterval);
+			autoState = !autoSave;
+			document.getElementById("autoState").innerHTML = autoState;
 		}
 		else{
 			autoSave = true;
@@ -109,6 +112,8 @@ function saveGame(how) {
 					saveGame("local");
 				}
 			},1000);
+			autoState = !autoSave;
+			document.getElementById("autoState").innerHTML = autoState;
 		}
 	}
 }
