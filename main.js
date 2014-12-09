@@ -104,9 +104,11 @@ function delSave(){
 	localStorage.removeItem("save")
 }
 
+
+//=================
 var bool;
 
-function autoSwitch(number){
+function autoSwitch(){
 	bool = !bool;
 	console.log(bool);
 }
