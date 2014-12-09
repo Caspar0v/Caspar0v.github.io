@@ -83,7 +83,7 @@ function saveGame(how) {
 	localStorage.setItem("save",JSON.stringify(save));
 	console.log("Save local");
 	}
-	else if(how=="autoSave"){
+	else if(how=="auto"){
 		console.log(autosave);
 		if(autoSave){
 			autoSave = false;
