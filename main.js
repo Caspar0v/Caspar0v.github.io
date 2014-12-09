@@ -70,7 +70,9 @@ var power = 1;
 ////////////
 //SaveGame//
 ////////////
-function saveGame() {
+var autoSaveTime = 10;
+function saveGame(how) {
+	if(how=="local"){
 	var save = {
 	    coin: coin,
 	    paper: paper,
@@ -78,6 +80,24 @@ function saveGame() {
 	    power: power
 	}
 	localStorage.setItem("save",JSON.stringify(save));
+	}
+	else if(how=="auto"){
+		if(autoSave){
+			autoSave = false;
+			if(typeof autoSaveInterval !== "undefined")clearInterval(autoSaveInterval);
+		}
+		else{
+			autoSave = true;
+			autoSaveInterval=setInterval(function() {
+				autoSaveTime--;
+				if(autoSaveTime==0) {
+					autoSaveTime=10;
+					console.log("saved");
+					saveGame("local");
+				}
+			},1000);
+		}
+	}
 }
 
 ////////////
@@ -105,13 +125,6 @@ function delSave(){
 }
 
 
-//=================
-var bool;
-
-function autoSwitch(){
-	bool = !bool;
-	console.log(bool);
-}
 
 /////////////
 //intervals//
@@ -120,17 +133,6 @@ window.setInterval(function(){
 
 	coinAuto(paper);
 	coinAuto(supermarket * 5);
-	
-}, 1000);
-
-window.setInterval(function(){
-	
-	if(bool = true){
-	saveGame();
-	}
-	else{
-	return false;	
-	}
 	
 }, 1000);
 
