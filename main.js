@@ -104,6 +104,13 @@ function delSave(){
 	localStorage.removeItem("save")
 }
 
+var bool;
+
+function autoSwith(number){
+	bool = !bool;
+	console.log(bool);
+}
+
 /////////////
 //intervals//
 /////////////
@@ -116,9 +123,14 @@ window.setInterval(function(){
 
 window.setInterval(function(){
 	
+	if(bool = true){
 	saveGame();
+	}
+	else{
+	return false;	
+	}
 	
-}, 10000);
+}, 1000);
 
 
 
