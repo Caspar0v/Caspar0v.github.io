@@ -94,7 +94,7 @@ function saveGame(how) {
 	console.log("Save local");
 	}
 	else if(how=="auto"){
-		console.log(autosave);
+		console.log(auto);
 		if(autoSave){
 			autoSave = false;
 			if(typeof autoSaveInterval !== "undefined")clearInterval(autoSaveInterval);
