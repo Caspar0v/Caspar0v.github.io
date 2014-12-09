@@ -81,7 +81,7 @@ function saveGame(how) {
 	}
 	localStorage.setItem("save",JSON.stringify(save));
 	}
-	else if(how=="auto"){
+	else if(how=="autoSave"){
 		if(autoSave){
 			autoSave = false;
 			if(typeof autoSaveInterval !== "undefined")clearInterval(autoSaveInterval);
@@ -90,8 +90,8 @@ function saveGame(how) {
 			autoSave = true;
 			autoSaveInterval=setInterval(function() {
 				autoSaveTime--;
-				if(autoSaveTime==0) {
-					autoSaveTime=10;
+				if(autoSaveTime == 0) {
+					autoSaveTime = 10;
 					console.log("saved");
 					saveGame("local");
 				}
