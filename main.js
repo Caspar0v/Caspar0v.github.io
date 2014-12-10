@@ -129,6 +129,7 @@ levelUp = setInterval(function(){
 			document.getElementById("experience").innerHTML = experience;
 			document.getElementById("costLevel").innerHTML = nextCostLevel;
 			document.getElementById("abilityPoints").innerHTML = abilityPoints;
+			costLevel = nextCostLevel;
 		}
 	}
 , 1000);
