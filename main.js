@@ -1,24 +1,54 @@
-////////////
-//currency//
-////////////
+//////////////////////////////////////
+//			Basic Syntax			//
+//////////////////////////////////////
+
+function updateInnerHTML(){
+	
+	//Updating amounts of machines and coins you have.
+	document.getElementById('coin').innerHTML = coin;
+	document.getElementById('paper').innerHTML = paper;
+	document.getElementById('supermarket').innerHTML = supermarket;
+	document.getElementById("power").innerHTML = power;
+	
+	//Calculating next costs based on your machines.
+	var nextPaperCost = Math.floor(10 * Math.pow(1.3, paper));
+	var nextSupermarketCost = Math.floor(50 * Math.pow(1.5, supermarket));
+	var powerCost = Math.floor(20 * Math.pow(1.25, power));
+	
+	//Calling the price of you machines.
+    document.getElementById('paperCost').innerHTML = nextPaperCost;
+	document.getElementById('supermarketCost').innerHTML = nextSupermarketCost;
+	document.getElementById("powerCost").innerHTML = nextPowerCost;
+
+}
+
+
+//////////////////////////////////////
+//			Base Currency			//
+//////////////////////////////////////
 var coin = 0;
 
+//The Manual Click
 function coinClick(number){
     coin = coin + (number * power);
     document.getElementById("coin").innerHTML = coin;
 };
 
+//The autocoins function
 function coinAuto(number){
 	coin = coin + number;
     document.getElementById("coin").innerHTML = coin;
 };
 
-///////////////
-//paperrounds//
-///////////////
+//////////////////////////////////////////
+//			Automatic Things			//
+//////////////////////////////////////////
+
+// ---------------- Base variables
 var paper = 0;
+var supermarket = 0;
 
-
+// ---------------- Paperrounds !
 function buyPaper(number) {
 var paperCost = Math.floor(10 * Math.pow(1.3, paper));     //works out the cost of this cursor
     if(coin >= paperCost){                             //checks that the player can afford the cursor
@@ -31,11 +61,7 @@ var paperCost = Math.floor(10 * Math.pow(1.3, paper));     //works out the cost 
     document.getElementById('paperCost').innerHTML = nextPaperCost;  //updates the cursor cost for the user
 };
 
-///////////////
-//supermarket//
-///////////////
-var supermarket = 0;
-
+//---------------- Supermarkets !
 function buySupermarket(number) {
 var supermarketCost = Math.floor(50 * Math.pow(1.5, supermarket));
 	if(coin >= supermarketCost){
@@ -49,32 +75,54 @@ var supermarketCost = Math.floor(50 * Math.pow(1.5, supermarket));
 	
 };
 
-///////////////
-//click power//
-///////////////
-var powerCost = 20;
+//////////////////////////////////////////////
+//			Clicking Power (Pro)			//
+//////////////////////////////////////////////
 var power = 1;
 
 function clickPower(number){
-	powerCost = Math.floor(20 * Math.pow(1.3, power));
+	var powerCost = Math.floor(20 * Math.pow(1.25, power));
 	if (coin >= powerCost) {
 		power = power + number;
 		coin = coin - powerCost;
 		document.getElementById("power").innerHTML = power;
 		document.getElementById("coin").innerHTML = coin;
 		};
-	nextPowerCost = Math.floor(20 * Math.pow(1.3, power));
+	var nextPowerCost = Math.floor(20 * Math.pow(1.3, power));
 	document.getElementById("powerCost").innerHTML = nextPowerCost;
 }
 
+//////////////////////////////////////////////////
+//			  Experience & Abilities			//
+//////////////////////////////////////////////////
+var experience = 0;
+var nextLevel = 100;
 
-////////////
-//SaveGame//
-////////////
+function addExperience(){
+	
+	
+}
+
+function levelUp(){
+	
+	
+}
+
+
+//////////////////////////////////
+//			SaveGame			//
+//////////////////////////////////
 var autoSave = true;
 var autoSaveTime = 10;
 var autoState;
 
+
+//If you want to delete you game, do it here or just click the button.
+function delSave(){
+	localStorage.removeItem("save")
+}
+
+//Interval of 10 seconds for autosave (probably making this configurible).
 autoSaveInterval=setInterval(function() {
 	autoSaveTime--;
 	if(autoSaveTime == 0) {
@@ -85,6 +133,7 @@ autoSaveInterval=setInterval(function() {
 },1000);
 
 function saveGame(how) {
+	//Local Save ============================
 	if(how=="local"){
 	var save = {
 	    coin: coin,
@@ -93,8 +142,9 @@ function saveGame(how) {
 	    power: power
 	}
 	localStorage.setItem("save",JSON.stringify(save));
-	console.log("Save local");
+	console.log("Save local (This is just to make sure it works)");
 	}
+	//Autosave ==============================
 	else if(how=="auto"){
 		console.log(autoSave);
 		if(autoSave){
@@ -109,7 +159,7 @@ function saveGame(how) {
 				autoSaveTime--;
 				if(autoSaveTime == 0) {
 					autoSaveTime = 10;
-					console.log("saved auto");
+					console.log("Saved auto (Just to make sure autosave works)");
 					saveGame("local");
 				}
 			},1000);
@@ -119,40 +169,30 @@ function saveGame(how) {
 	}
 }
 
-////////////
-//LoadGame//
-////////////
+//////////////////////////////////
+//			LoadGame			//
+//////////////////////////////////
 function loadGame(){
 	var loadgame = JSON.parse(localStorage.getItem("save"));
 	if (typeof loadgame.coin !== "undefined") coin = loadgame.coin;
 	if (typeof loadgame.paper !== "undefined") paper = loadgame.paper;
 	if (typeof loadgame.supermarket !== "undefined") supermarket = loadgame.supermarket;
 	if (typeof loadgame.power !== "undefined") power = loadgame.power;
-	document.getElementById('coin').innerHTML = coin;
-	document.getElementById('paper').innerHTML = paper;
-	document.getElementById('supermarket').innerHTML = supermarket;
-	document.getElementById("power").innerHTML = power;
-	var nextPaperCost = Math.floor(10 * Math.pow(1.3, paper));
-    document.getElementById('paperCost').innerHTML = nextPaperCost;
-	var nextSupermarketCost = Math.floor(50 * Math.pow(1.5, supermarket));
-	document.getElementById('supermarketCost').innerHTML = nextSupermarketCost;
-	powerCost = Math.floor(20 * Math.pow(1.3, power));
-	document.getElementById("powerCost").innerHTML = powerCost;
+	
+	
 }
 
-function delSave(){
-	localStorage.removeItem("save")
-}
+//////////////////////////////////////
+//			Timer Interval			//
+//////////////////////////////////////
 
-
-
-/////////////
-//intervals//
-/////////////
+//Interval for the automatic coin thingies. 
+//1000ms so 1 second.
 window.setInterval(function(){
 
 	coinAuto(paper);
 	coinAuto(supermarket * 5);
+	console.log(coinAuto(number));
 	
 }, 1000);
 
