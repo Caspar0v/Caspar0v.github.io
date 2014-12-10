@@ -11,7 +11,6 @@ function updateInnerHTML(){
 	document.getElementById("power").innerHTML = power;
 	document.getElementById("experience").innerHTML = experience;
 	document.getElementById("abilityPoints").innerHTML = abilityPoints;
-	document.getElementById("level").innerHTML = level;
 	
 	//Calculating next costs based on your machines.
 	var nextPaperCost = Math.floor(10 * Math.pow(1.3, paper));
