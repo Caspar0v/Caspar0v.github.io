@@ -23,7 +23,7 @@ function updateInnerHTML(){
     document.getElementById('paperCost').innerHTML = nextPaperCost;
 	document.getElementById('supermarketCost').innerHTML = nextSupermarketCost;
 	document.getElementById("powerCost").innerHTML = nextPowerCost;
-	document.getElementById("costLevel").innerHTML = NextCostLevel;
+	document.getElementById("costLevel").innerHTML = nextCostLevel;
 }
 
 
@@ -47,14 +47,12 @@ function coinAuto(number){
 };
 
 function sumUp(){
-	coinAuto(paper);
-	coinAuto(supermarket * 5);
+	var sum =
+		coinAuto(paper) +
+		coinAuto(supermarket * 5);
+	console.log(sum);
 }
 
-function xpadd(){
-	xpNumber = xpNumber + sumUp();
-	console.log("getting xpnumber " + xpNumber);
-}
 //////////////////////////////////////////
 //			Automatic Things			//
 //////////////////////////////////////////
