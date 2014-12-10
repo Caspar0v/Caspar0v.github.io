@@ -87,7 +87,7 @@ var supermarketCost = Math.floor(50 * Math.pow(1.5, supermarket));
 var power = 1;
 
 function clickPower(number){
-	var powerCost = Math.floor(20 * Math.pow(1.25, power));
+	var powerCost = Math.floor(25 * Math.pow(1.25, power));
 	if (coin >= powerCost) {
 		power = power + number;
 		coin = coin - powerCost;
