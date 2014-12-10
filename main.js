@@ -16,7 +16,7 @@ function updateInnerHTML(){
 	var nextPaperCost = Math.floor(10 * Math.pow(1.3, paper));
 	var nextSupermarketCost = Math.floor(50 * Math.pow(1.5, supermarket));
 	var nextPowerCost = Math.floor(20 * Math.pow(1.25, power));
-	var nextCostLevel = Math.floor(127 * Math.pow(1.25, costLevel));
+	var nextCostLevel = Math.floor(127 * Math.pow(1.25, level));
 
 	
 	//Calling the price of you machines.
@@ -46,12 +46,7 @@ function coinAuto(number){
     document.getElementById("coin").innerHTML = coin;
 };
 
-function sumUp(){
-	var sum =
-		coinAuto(paper) +
-		coinAuto(supermarket * 5);
-	console.log(sum);
-}
+
 
 //////////////////////////////////////////
 //			Automatic Things			//
@@ -111,6 +106,7 @@ function clickPower(number){
 var experience = 0;
 var costLevel = 127;
 var abilityPoints = 0;
+var level = 0;
 
 addExperience = setInterval(function(){
 		for (var i = 10; i < xpNumber; xpNumber - 10){
@@ -124,6 +120,7 @@ levelUp = setInterval(function(){
 		if(experience >= costLevel){
 			experience = 0;
 			abilityPoints = abilityPoints + 1;
+			level = level + 1;
 			var nextCostLevel = Math.floor(127 * Math.pow(1.25, nextLevel));
 			document.getElementById("experience").innerHTML = experience;
 			document.getElementById("costLevel").innerHTML = NextCostLevel;
@@ -220,8 +217,10 @@ function loadGame(){
 
 window.setInterval(function(){
 
-	sumUp();
-	console.log(sumUp());
+	coinAuto(paper);
+	coinAuto(supermarket * 5);
+	console.log("check");
+
 	
 }, 1000);
 
