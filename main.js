@@ -44,7 +44,7 @@ function coinClick(number){
 function coinAuto(number){
 	coin = coin + number;
 	xpNumber = xpNumber + number;
-	console.log("getting " + xpNumber);
+	console.log("getting xpnumber " + xpNumber);
     document.getElementById("coin").innerHTML = coin;
 };
 
@@ -119,7 +119,7 @@ levelUp = setInterval(function(){
 		if(experience >= costLevel){
 			experience = 0;
 			abilityPoints = abilityPoints + 1;
-			var nextCostLevel = Math.floor(100 * Math.pow(1.25, nextLevel));
+			var nextCostLevel = Math.floor(127 * Math.pow(1.25, nextLevel));
 			document.getElementById("experience").innerHTML = experience;
 			document.getElementById("costLevel").innerHTML = NextCostLevel;
 			document.getElementById("abilityPoints").innerHTML = abilityPoints;
