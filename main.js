@@ -116,7 +116,7 @@ addExperience = setInterval(function(){
 , 100);
 
 levelUp = setInterval(function(){
-		if(experience >= nextLevel){
+		if(experience >= costLevel){
 			experience = 0;
 			abilityPoints = abilityPoints + 1;
 			var nextCostLevel = Math.floor(100 * Math.pow(1.25, nextLevel));
@@ -217,7 +217,7 @@ window.setInterval(function(){
 	coinAuto(paper);
 	coinAuto(supermarket * 5);
 	xpNumberAdd = xpNumberAdd + xpNumber;
-	console.log(xpNumberAdd);
+	console.log("xpNumberAdd" + xpNumberAdd);
 	
 }, 1000);
 
