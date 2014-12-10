@@ -9,17 +9,21 @@ function updateInnerHTML(){
 	document.getElementById('paper').innerHTML = paper;
 	document.getElementById('supermarket').innerHTML = supermarket;
 	document.getElementById("power").innerHTML = power;
+	document.getElementById("experience").innerHTML = experience;
+	document.getElementById("abilityPoints").innerHTML = abilityPoints;
 	
 	//Calculating next costs based on your machines.
 	var nextPaperCost = Math.floor(10 * Math.pow(1.3, paper));
 	var nextSupermarketCost = Math.floor(50 * Math.pow(1.5, supermarket));
-	var powerCost = Math.floor(20 * Math.pow(1.25, power));
+	var nextpowerCost = Math.floor(20 * Math.pow(1.25, power));
+	var nextCostLevel = Math.floor(127 * Math.pow(1.25, costLevel));
+
 	
 	//Calling the price of you machines.
     document.getElementById('paperCost').innerHTML = nextPaperCost;
 	document.getElementById('supermarketCost').innerHTML = nextSupermarketCost;
 	document.getElementById("powerCost").innerHTML = nextPowerCost;
-
+	document.getElementById("costLevel").innerHTML = NextCostLevel;
 }
 
 
@@ -37,6 +41,8 @@ function coinClick(number){
 //The autocoins function
 function coinAuto(number){
 	coin = coin + number;
+	var xpNumber = xpNumber + number;
+	console.log("getting" + xpNumber);
     document.getElementById("coin").innerHTML = coin;
 };
 
@@ -88,7 +94,7 @@ function clickPower(number){
 		document.getElementById("power").innerHTML = power;
 		document.getElementById("coin").innerHTML = coin;
 		};
-	var nextPowerCost = Math.floor(20 * Math.pow(1.3, power));
+	var nextPowerCost = Math.floor(20 * Math.pow(1.25, power));
 	document.getElementById("powerCost").innerHTML = nextPowerCost;
 }
 
@@ -96,17 +102,28 @@ function clickPower(number){
 //			  Experience & Abilities			//
 //////////////////////////////////////////////////
 var experience = 0;
-var nextLevel = 100;
+var costLevel = 127;
+var abilityPoints;
 
-function addExperience(){
-	
-	
-}
+addExperience = setInterval(function(){
+		for (var i = 10; i < xpNumber; xpNumber-10){
+			experience = experience + 1;
+			console.log("addexperience : " + xpNumber);
+		}	
+	}
+, 100);
 
-function levelUp(){
-	
-	
-}
+levelUp = setInterval(function(){
+		if(experience >= nextLevel){
+			experience = 0;
+			abilityPoints = abilityPoints + 1;
+			var nextCostLevel = Math.floor(100 * Math.pow(1.25, nextLevel));
+			document.getElementById("experience").innerHTML = experience;
+			document.getElementById("costLevel").innerHTML = NextCostLevel;
+			document.getElementById("abilityPoints").innerHTML = abilityPoints;
+		}
+	}
+, 1000);
 
 
 //////////////////////////////////
@@ -139,7 +156,9 @@ function saveGame(how) {
 	    coin: coin,
 	    paper: paper,
 	    supermarket: supermarket,
-	    power: power
+	    power: power,
+	    experience: experience,
+	    abilityPoints: abilityPoints
 	}
 	localStorage.setItem("save",JSON.stringify(save));
 	console.log("Save local (This is just to make sure it works)");
@@ -178,8 +197,11 @@ function loadGame(){
 	if (typeof loadgame.paper !== "undefined") paper = loadgame.paper;
 	if (typeof loadgame.supermarket !== "undefined") supermarket = loadgame.supermarket;
 	if (typeof loadgame.power !== "undefined") power = loadgame.power;
+	if (typeof loadgame.experience !== "undefined") experience = loadgame.experience;
+	if (typeof loadgame.abilityPoints !== "undefined") abilityPoints = loadgame.abilityPoints;
 	
-	
+	//update all
+	updateInnerHTML()
 }
 
 //////////////////////////////////////
@@ -192,7 +214,6 @@ window.setInterval(function(){
 
 	coinAuto(paper);
 	coinAuto(supermarket * 5);
-	console.log(coinAuto(number));
 	
 }, 1000);
 
