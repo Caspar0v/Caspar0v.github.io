@@ -15,7 +15,7 @@ function updateInnerHTML(){
 	//Calculating next costs based on your machines.
 	var nextPaperCost = Math.floor(10 * Math.pow(1.3, paper));
 	var nextSupermarketCost = Math.floor(50 * Math.pow(1.5, supermarket));
-	var nextpowerCost = Math.floor(20 * Math.pow(1.25, power));
+	var nextPowerCost = Math.floor(20 * Math.pow(1.25, power));
 	var nextCostLevel = Math.floor(127 * Math.pow(1.25, costLevel));
 
 	
@@ -43,7 +43,7 @@ function coinClick(number){
 //The autocoins function
 function coinAuto(number){
 	coin = coin + number;
-	xpNumber = number;
+	xpNumber = xpNumber + number;
 	console.log("getting " + xpNumber);
     document.getElementById("coin").innerHTML = coin;
 };
