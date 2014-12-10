@@ -32,7 +32,7 @@ function updateInnerHTML(){
 //////////////////////////////////////
 var coin = 0;
 var xpNumber = 0;
-var xpNumberAdd = 0;
+
 
 //The Manual Click
 function coinClick(number){
@@ -43,11 +43,18 @@ function coinClick(number){
 //The autocoins function
 function coinAuto(number){
 	coin = coin + number;
-	xpNumber = xpNumber + number;
-	console.log("getting xpnumber " + xpNumber);
     document.getElementById("coin").innerHTML = coin;
 };
 
+function sumUp(){
+	coinAuto(paper);
+	coinAuto(supermarket * 5);
+}
+
+function xpadd(){
+	xpNumber = xpNumber + sumUp();
+	console.log("getting xpnumber " + xpNumber);
+}
 //////////////////////////////////////////
 //			Automatic Things			//
 //////////////////////////////////////////
@@ -108,7 +115,7 @@ var costLevel = 127;
 var abilityPoints = 0;
 
 addExperience = setInterval(function(){
-		for (var i = 10; i < xpNumberAdd; xpNumberAdd - 10){
+		for (var i = 10; i < xpNumber; xpNumber - 10){
 			experience = experience + 1;
 			console.log("addexperience xpNumberAdd : " + xpNumberAdd);
 		}	
@@ -214,10 +221,8 @@ function loadGame(){
 //1000ms so 1 second.
 window.setInterval(function(){
 
-	coinAuto(paper);
-	coinAuto(supermarket * 5);
-	xpNumberAdd = xpNumberAdd + xpNumber;
-	console.log("xpNumberAdd" + xpNumberAdd);
+	sumUp();
+	console.log(sumpUp());
 	
 }, 1000);
 
