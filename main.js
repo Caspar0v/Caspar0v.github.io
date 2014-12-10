@@ -112,11 +112,13 @@ var level = 0;
 addExperience = setInterval(function(){
 		for (xpNumber; xpNumber >= 10 ; xpNumber -= 10){
 			experience = experience + 1;
-			console.log("addexperience xpNumber : " + xpNumber);
 			document.getElementById("experience").innerHTML = experience;
+			if(experience > costLevel){
+				experience = costLevel;
+			}
 		}	
 	}
-, 100);
+, 1000);
 
 levelUp = setInterval(function(){
 		if(experience >= costLevel){
