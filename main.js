@@ -210,7 +210,7 @@ function loadGame(){
 	if (typeof loadgame.abilityPoints !== "undefined") abilityPoints = loadgame.abilityPoints;
 	
 	//update all
-	updateInnerHTML()
+	updateInnerHTML();
 }
 
 //////////////////////////////////////
@@ -219,10 +219,11 @@ function loadGame(){
 
 //Interval for the automatic coin thingies. 
 //1000ms so 1 second.
+
 window.setInterval(function(){
 
 	sumUp();
-	console.log(sumpUp());
+	console.log(sumUp());
 	
 }, 1000);
 
