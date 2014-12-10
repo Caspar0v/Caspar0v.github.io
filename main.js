@@ -31,6 +31,7 @@ function updateInnerHTML(){
 //			Base Currency			//
 //////////////////////////////////////
 var coin = 0;
+var xpNumber = 0;
 
 //The Manual Click
 function coinClick(number){
@@ -41,8 +42,8 @@ function coinClick(number){
 //The autocoins function
 function coinAuto(number){
 	coin = coin + number;
-	var xpNumber = xpNumber + number;
-	console.log("getting" + xpNumber);
+	xpNumber = xpNumber + number;
+	console.log("getting " + xpNumber);
     document.getElementById("coin").innerHTML = coin;
 };
 
@@ -103,10 +104,10 @@ function clickPower(number){
 //////////////////////////////////////////////////
 var experience = 0;
 var costLevel = 127;
-var abilityPoints;
+var abilityPoints = 0;
 
 addExperience = setInterval(function(){
-		for (var i = 10; i < xpNumber; xpNumber-10){
+		for (var i = 10; i < xpNumber; xpNumber - 10){
 			experience = experience + 1;
 			console.log("addexperience : " + xpNumber);
 		}	
