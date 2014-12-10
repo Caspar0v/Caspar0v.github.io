@@ -43,6 +43,7 @@ function coinClick(number){
 //The autocoins function
 function coinAuto(number){
 	coin = coin + number;
+	xpNumber = xpNumber + number;
     document.getElementById("coin").innerHTML = coin;
 };
 
@@ -109,9 +110,10 @@ var abilityPoints = 0;
 var level = 0;
 
 addExperience = setInterval(function(){
-		for (var i = 10; i < xpNumber; xpNumber - 10){
+		for (xpNumber; xpNumber >= 10 ; xpNumber -= 10){
 			experience = experience + 1;
-			console.log("addexperience xpNumberAdd : " + xpNumberAdd);
+			console.log("addexperience xpNumber : " + xpNumber);
+			document.getElementById("experience").innerHTML = experience;
 		}	
 	}
 , 100);
