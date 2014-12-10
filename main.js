@@ -17,7 +17,7 @@ function updateInnerHTML(){
 	var nextPaperCost = Math.floor(10 * Math.pow(1.3, paper));
 	var nextSupermarketCost = Math.floor(50 * Math.pow(1.5, supermarket));
 	var nextPowerCost = Math.floor(20 * Math.pow(1.25, power));
-	var nextCostLevel = Math.floor(116 * Math.pow(1.1, level));
+	var nextCostLevel = Math.floor(116 * Math.pow(1.1, abilityPoints));
 
 	
 	//Calling the price of you machines.
@@ -119,8 +119,7 @@ function clickPower(number){
 //////////////////////////////////////////////////
 var experience = 0;
 var costLevel = 127;
-var abilityPoints = 0;
-var level = 1;
+var abilityPoints = 1;
 
 addExperience = setInterval(function(){
 		for (xpNumber; xpNumber >= 10 ; xpNumber -= 10){
@@ -137,8 +136,7 @@ levelUp = setInterval(function(){
 		if(experience >= costLevel){
 			experience = 0;
 			abilityPoints = abilityPoints + 1;
-			level = level + 1;
-			var nextCostLevel = Math.floor(116 * Math.pow(1.1, level));
+			var nextCostLevel = Math.floor(116 * Math.pow(1.1, abilityPoints));
 			document.getElementById("experience").innerHTML = experience;
 			document.getElementById("costLevel").innerHTML = nextCostLevel;
 			document.getElementById("abilityPoints").innerHTML = abilityPoints;
