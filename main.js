@@ -11,6 +11,7 @@ function updateInnerHTML(){
 	document.getElementById("power").innerHTML = power;
 	document.getElementById("experience").innerHTML = experience;
 	document.getElementById("abilityPoints").innerHTML = abilityPoints;
+	document.getElementById("level").innerHTML = level;
 	
 	//Calculating next costs based on your machines.
 	var nextPaperCost = Math.floor(10 * Math.pow(1.3, paper));
@@ -167,7 +168,8 @@ function saveGame(how) {
 	    supermarket: supermarket,
 	    power: power,
 	    experience: experience,
-	    abilityPoints: abilityPoints
+	    abilityPoints: abilityPoints,
+	    level: level
 	}
 	localStorage.setItem("save",JSON.stringify(save));
 	console.log("Save local (This is just to make sure it works)");
@@ -208,6 +210,7 @@ function loadGame(){
 	if (typeof loadgame.power !== "undefined") power = loadgame.power;
 	if (typeof loadgame.experience !== "undefined") experience = loadgame.experience;
 	if (typeof loadgame.abilityPoints !== "undefined") abilityPoints = loadgame.abilityPoints;
+	if (typeof loadgame.level !== "undefined") level = loadgame.level;
 	
 	//update all
 	updateInnerHTML();
