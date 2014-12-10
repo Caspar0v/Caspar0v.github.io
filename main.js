@@ -55,16 +55,17 @@ var supermarketCost = Math.floor(50 * Math.pow(1.5, supermarket));
 var powerCost = 20;
 var power = 1;
 
-	function clickPower(number){
-		if (coin >= powerCost) {
+function clickPower(number){
+	powerCost = Math.floor(20 * Math.pow(1.3, power));
+	if (coin >= powerCost) {
 		power = power + number;
 		coin = coin - powerCost;
-		powerCost = Math.floor(20 * Math.pow(1.3, power));
-		document.getElementById("powerCost").innerHTML = powerCost;
 		document.getElementById("power").innerHTML = power;
 		document.getElementById("coin").innerHTML = coin;
-		}
-	}
+		};
+	nextPowerCost = Math.floor(20 * Math.pow(1.3, power));
+	document.getElementById("powerCost").innerHTML = nextPowerCost;
+}
 
 
 ////////////
