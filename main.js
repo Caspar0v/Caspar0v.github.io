@@ -33,8 +33,6 @@ function updateInnerHTML(){
 	document.getElementById('carwashCost').innerHTML = nextCarwashCost;
 
 	//Calling the price of currency related things
-	console.log(levelCost);
-	document.getElementById("levelCost").innerHTML = levelCost;
 	document.getElementById("levelCost").innerHTML = nextLevelCost;
 	
 	
@@ -279,7 +277,7 @@ window.setInterval(function(){
 	coinAuto(supermarket * 2);
 	coinAuto(carwash * 5);
 	console.log("check");
-	console.log(levelCost);
+	console.log("level = " + level);
 
 	
 }, 1000);
