@@ -275,7 +275,7 @@ window.setInterval(function(){
 	coinAuto(paper);
 	coinAuto(supermarket * 2);
 	coinAuto(carwash * 5);
-	console.log("check");
+	console.log(levelCost);
 	console.log("level = " + level);
 
 	
