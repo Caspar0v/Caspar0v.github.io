@@ -70,6 +70,7 @@ function coinAuto(number){
 // ---------------- Base variables
 var paper = 0;
 var supermarket = 0;
+var carwash = 0;
 
 // ---------------- Paperrounds !
 function buyPaper(number) {
