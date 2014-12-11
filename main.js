@@ -142,7 +142,7 @@ function clickPower(number){
 //			  Experience & Abilities			//
 //////////////////////////////////////////////////
 var experience = 0;
-var levelCost = Math.floor(116 * Math.pow(1.1, level));
+var levelCost = 127;
 var abilityPoints = 1;
 var level = 1;
 
@@ -158,6 +158,7 @@ addExperience = setInterval(function(){
 , 1000);
 
 levelUp = setInterval(function(){
+	var levelCost = Math.floor(116 * Math.pow(1.1, level));
 		if(experience >= levelCost){
 			experience = 0;
 			abilityPoints = abilityPoints + 1;
