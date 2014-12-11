@@ -213,7 +213,7 @@ function saveGame(how) {
 	    
 	    //abilities
 	    
-	}
+	};
 	localStorage.setItem("save",JSON.stringify(save));
 	console.log("Save local (This is just to make sure it works)");
 	}
