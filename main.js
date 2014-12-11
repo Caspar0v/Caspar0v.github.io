@@ -33,6 +33,8 @@ function updateInnerHTML(){
 	document.getElementById('carwashCost').innerHTML = nextCarwashCost;
 
 	//Calling the price of currency related things
+	console.log(levelCost);
+	document.getElementById("levelCost").innerHTML = levelCost;
 	document.getElementById("levelCost").innerHTML = nextLevelCost;
 	
 	
