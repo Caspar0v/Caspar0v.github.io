@@ -279,7 +279,7 @@ window.setInterval(function(){
 	coinAuto(supermarket * 2);
 	coinAuto(carwash * 5);
 	console.log("check");
-	console.log(nextLevelCost);
+	console.log(levelCost);
 
 	
 }, 1000);
