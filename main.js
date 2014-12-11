@@ -9,7 +9,6 @@ function updateInnerHTML(){
 	document.getElementById("power").innerHTML = power;
 	document.getElementById("experience").innerHTML = experience;
 	document.getElementById("abilityPoints").innerHTML = abilityPoints;
-	document.getElementById("level").innerHTML = level;
 
 	
 	//Calling your machines
