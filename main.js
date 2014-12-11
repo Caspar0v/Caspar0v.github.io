@@ -142,7 +142,7 @@ function clickPower(number){
 //			  Experience & Abilities			//
 //////////////////////////////////////////////////
 var experience = 0;
-var levelCost = 127;
+var levelCost = Math.floor(116 * Math.pow(1.1, level));
 var abilityPoints = 1;
 var level = 1;
 
@@ -276,6 +276,7 @@ window.setInterval(function(){
 	coinAuto(supermarket * 2);
 	coinAuto(carwash * 5);
 	console.log("check");
+	console.log(nextLevelCost);
 
 	
 }, 1000);
