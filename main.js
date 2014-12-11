@@ -158,7 +158,6 @@ addExperience = setInterval(function(){
 , 1000);
 
 levelUp = setInterval(function(){
-	var levelCost = Math.floor(116 * Math.pow(1.1, level));
 		if(experience >= levelCost){
 			experience = 0;
 			abilityPoints = abilityPoints + 1;
