@@ -4,26 +4,40 @@
 
 function updateInnerHTML(){
 	
-	//Updating amounts of machines and coins you have.
+	//Updating amounts of currencies you have.
 	document.getElementById('coin').innerHTML = coin;
-	document.getElementById('paper').innerHTML = paper;
-	document.getElementById('supermarket').innerHTML = supermarket;
 	document.getElementById("power").innerHTML = power;
 	document.getElementById("experience").innerHTML = experience;
 	document.getElementById("abilityPoints").innerHTML = abilityPoints;
+	document.getElementById("level").innerHTML = level;
+
+	
+	//Calling your machines
+	document.getElementById('paper').innerHTML = paper;
+	document.getElementById('supermarket').innerHTML = supermarket;
+	document.getElementById('carwash').innerHTML = carwash;
 	
 	//Calculating next costs based on your machines.
 	var nextPaperCost = Math.floor(10 * Math.pow(1.3, paper));
 	var nextSupermarketCost = Math.floor(50 * Math.pow(1.5, supermarket));
+	var nextCarwashCost = Math.floor(250 * Math.pow(1.4, carwash));
+	
+	//Calculating next currencies related cost.
 	var nextPowerCost = Math.floor(20 * Math.pow(1.25, power));
-	var nextCostLevel = Math.floor(116 * Math.pow(1.1, abilityPoints));
+	var nextLevelCost = Math.floor(116 * Math.pow(1.1, level));
 
 	
 	//Calling the price of you machines.
     document.getElementById('paperCost').innerHTML = nextPaperCost;
 	document.getElementById('supermarketCost').innerHTML = nextSupermarketCost;
 	document.getElementById("powerCost").innerHTML = nextPowerCost;
-	document.getElementById("costLevel").innerHTML = nextCostLevel;
+	document.getElementById('carwashCost').innerHTML = nextCarwashCost;
+
+	//Calling the price of currency related things
+	document.getElementById("levelCost").innerHTML = nextLevelCost;
+	
+	
+	//Calling abilities
 }
 
 
@@ -59,12 +73,12 @@ var supermarket = 0;
 
 // ---------------- Paperrounds !
 function buyPaper(number) {
-var paperCost = Math.floor(10 * Math.pow(1.3, paper));     //works out the cost of this cursor
+	var paperCost = Math.floor(10 * Math.pow(1.3, paper));     //works out the cost of this cursor
     if(coin >= paperCost){                             //checks that the player can afford the cursor
-        paper = paper + 1;                                   //increases number of cursors
-    	coin = coin - paperCost;                          //removes the cookies spent
-        document.getElementById('paper').innerHTML = paper;  //updates the number of cursors for the user
-        document.getElementById('coin').innerHTML = coin;  //updates the number of cookies for the user
+   		paper = paper + 1;                                   //increases number of cursors
+   		coin = coin - paperCost;                          //removes the cookies spent
+   		document.getElementById('paper').innerHTML = paper;  //updates the number of cursors for the user
+   		document.getElementById('coin').innerHTML = coin;  //updates the number of cookies for the user
     };
     var nextPaperCost = Math.floor(10 * Math.pow(1.3, paper));
     document.getElementById('paperCost').innerHTML = nextPaperCost;  //updates the cursor cost for the user
@@ -72,7 +86,7 @@ var paperCost = Math.floor(10 * Math.pow(1.3, paper));     //works out the cost 
 
 //---------------- Supermarkets !
 function buySupermarket(number) {
-var supermarketCost = Math.floor(50 * Math.pow(1.5, supermarket));
+	var supermarketCost = Math.floor(50 * Math.pow(1.5, supermarket));
 	if(coin >= supermarketCost){
 		supermarket = supermarket + 1;
 		coin = coin - supermarketCost;
@@ -81,12 +95,22 @@ var supermarketCost = Math.floor(50 * Math.pow(1.5, supermarket));
 	};
 	var nextSupermarketCost = Math.floor(50 * Math.pow(1.5, supermarket));
 	document.getElementById('supermarketCost').innerHTML = nextSupermarketCost;
-	
 };
 
+//---------------- Car washing !
+function buyCarwash(number) {
+	var carwashCost = Math.floor(250 * Math.pow(1.4, carwash));
+	if(coin >= carwashCost){
+		carwash = carwash + 1;
+		coin = coin - carwashCost;
+		document.getElementById('carwash').innerHTML = carwash;
+		document.getElementById('coin').innerHTML = coin;
+	};
+	var nextCarwashCost = Math.floor(250 * Math.pow(1.4, carwash));
+	document.getElementById('carwashCost').innerHTML = nextCarwashCost;
+};
 
 /*Things to add
- * car washing
  * bad broker
  * good broker
  * hotel
@@ -117,29 +141,31 @@ function clickPower(number){
 //			  Experience & Abilities			//
 //////////////////////////////////////////////////
 var experience = 0;
-var costLevel = 127;
+var levelCost = 127;
 var abilityPoints = 1;
+var level = 1;
 
 addExperience = setInterval(function(){
 		for (xpNumber; xpNumber >= 10 ; xpNumber -= 10){
 			experience = experience + 1;
 			document.getElementById("experience").innerHTML = experience;
-			if(experience > costLevel){
-				experience = costLevel;
+			if(experience > levelCost){
+				experience = levelCost;
 			}
 		}	
 	}
 , 1000);
 
 levelUp = setInterval(function(){
-		if(experience >= costLevel){
+		if(experience >= levelCost){
 			experience = 0;
 			abilityPoints = abilityPoints + 1;
-			var nextCostLevel = Math.floor(116 * Math.pow(1.1, abilityPoints));
+			level = level + 1;
+			var nextLevelCost = Math.floor(116 * Math.pow(1.1, level));
 			document.getElementById("experience").innerHTML = experience;
-			document.getElementById("costLevel").innerHTML = nextCostLevel;
+			document.getElementById("levelCost").innerHTML = nextLevelCost;
 			document.getElementById("abilityPoints").innerHTML = abilityPoints;
-			costLevel = nextCostLevel;
+			levelCost = nextLevelCost;
 		}
 	}
 , 1000);
@@ -172,13 +198,20 @@ function saveGame(how) {
 	//Local Save ============================
 	if(how=="local"){
 	var save = {
-	    coin: coin,
-	    paper: paper,
-	    supermarket: supermarket,
+	    //currencies
+		coin: coin,
 	    power: power,
 	    experience: experience,
 	    abilityPoints: abilityPoints,
-	    level: level
+	    level: level,
+	    
+	    //machines
+	    paper: paper,
+	    supermarket: supermarket,
+	    carwash: carwash
+	    
+	    //abilities
+	    
 	}
 	localStorage.setItem("save",JSON.stringify(save));
 	console.log("Save local (This is just to make sure it works)");
@@ -213,14 +246,18 @@ function saveGame(how) {
 //////////////////////////////////
 function loadGame(){
 	var loadgame = JSON.parse(localStorage.getItem("save"));
+	//currencies
 	if (typeof loadgame.coin !== "undefined") coin = loadgame.coin;
-	if (typeof loadgame.paper !== "undefined") paper = loadgame.paper;
-	if (typeof loadgame.supermarket !== "undefined") supermarket = loadgame.supermarket;
 	if (typeof loadgame.power !== "undefined") power = loadgame.power;
 	if (typeof loadgame.experience !== "undefined") experience = loadgame.experience;
 	if (typeof loadgame.abilityPoints !== "undefined") abilityPoints = loadgame.abilityPoints;
 	if (typeof loadgame.level !== "undefined") level = loadgame.level;
 	
+	//machines
+	if (typeof loadgame.paper !== "undefined") paper = loadgame.paper;
+	if (typeof loadgame.supermarket !== "undefined") supermarket = loadgame.supermarket;
+	if (typeof loadgame.carwash !== "undefined") carwash = loadgame.carwash;
+ 	
 	//update all
 	updateInnerHTML();
 }
@@ -235,7 +272,8 @@ function loadGame(){
 window.setInterval(function(){
 
 	coinAuto(paper);
-	coinAuto(supermarket * 5);
+	coinAuto(supermarket * 2);
+	coinAuto(carwash * 5);
 	console.log("check");
 
 	
