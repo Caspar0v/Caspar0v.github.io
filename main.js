@@ -23,7 +23,7 @@ function updateInnerHTML(){
 	var nextCarwashCost = Math.floor(250 * Math.pow(1.4, carwash));
 	
 	//Calculating next currencies related cost.
-	var nextPowerCost = Math.floor(20 * Math.pow(1.25, power));
+	var nextPowerCost = Math.floor(16 * Math.pow(2, power));
 	var nextLevelCost = Math.floor(116 * Math.pow(1.1, level));
 
 	
@@ -127,14 +127,14 @@ function buyCarwash(number) {
 var power = 1;
 
 function clickPower(number){
-	var powerCost = Math.floor(25 * Math.pow(1.25, power));
+	var powerCost = Math.floor(16 * Math.pow(2, power));
 	if (coin >= powerCost) {
 		power = power + number;
 		coin = coin - powerCost;
 		document.getElementById("power").innerHTML = power;
 		document.getElementById("coin").innerHTML = coin;
 		};
-	var nextPowerCost = Math.floor(20 * Math.pow(1.25, power));
+	var nextPowerCost = Math.floor(16 * Math.pow(2, power));
 	document.getElementById("powerCost").innerHTML = nextPowerCost;
 }
 
