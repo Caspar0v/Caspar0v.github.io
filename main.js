@@ -179,10 +179,12 @@ levelUp = setInterval(function(){
 //////////////////////////////////
 //			Abilities			//
 //////////////////////////////////
-
-
 function unlockSupermarket(){
-	if(abilityPoints >= abilitySupermarket){}
+	if(abilityPoints >= abilitySupermarket){
+		
+		
+		
+	}
 	
 }
 
