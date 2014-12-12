@@ -143,9 +143,9 @@ function clickPower(number){
 	document.getElementById("powerCost").innerHTML = nextPowerCost;
 }
 
-//////////////////////////////////////////////////
-//			  Experience & Abilities			//
-//////////////////////////////////////////////////
+//////////////////////////////////
+//			  Experience		//
+//////////////////////////////////
 var experience = 0;
 var levelCost = 127;
 var abilityPoints = 1;
@@ -175,6 +175,17 @@ levelUp = setInterval(function(){
 		}
 	}
 , 1000);
+
+//////////////////////////////////
+//			Abilities			//
+//////////////////////////////////
+
+
+function unlockSupermarket(){
+	if(abilityPoints >= abilitySupermarket){}
+	
+}
+
 
 
 //////////////////////////////////
