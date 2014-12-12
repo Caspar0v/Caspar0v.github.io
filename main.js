@@ -37,9 +37,14 @@ function updateInnerHTML(){
 	
 	
 	//Calling abilities
+	
 }
 
-
+//////////////////////////////
+function textVis(){
+	document.getElementById('test').style.visibility = "visible";
+}
+//////////////////////////////
 
 //////////////////////////////////////
 //			Base Currency			//
