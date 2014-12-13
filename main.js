@@ -178,7 +178,7 @@ levelUp = setInterval(function(){
 //			Abilities			//
 //////////////////////////////////
 var abilitySupermarketCost = 1;
-var abilitySupermarket = 0;
+var abilitySupermarket = false;
 
 function unlockSupermarket(){
 	if(abilityPoints >= abilitySupermarketCost){
@@ -186,7 +186,7 @@ function unlockSupermarket(){
 		document.getElementById('unlockSupermarket').style.display = "block";
 		document.getElementById('lockedSupermarket').style.display = "none";
 		document.getElementById('abilityPoints').innerHTML = abilityPoints;
-		abilitySupermarket = 1;
+		abilitySupermarket = true;
 		console.log(abilitySupermarket);
 	}
 }
@@ -281,7 +281,7 @@ function loadGame(){
 	if (typeof loadgame.carwash !== "undefined") carwash = loadgame.carwash;
  	
 	//abilities
-	if (typeof loadgame.abilitySupermarket !== "undefined") abilitySupermarket = loadgame.abilityCarwash;
+	if (typeof loadgame.abilitySupermarket !== "undefined") abilitySupermarket = loadgame.abilitySupermarket;
 	
 	console.log(abilitySupermarket);
 	//update all
