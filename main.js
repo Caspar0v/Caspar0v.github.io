@@ -37,7 +37,7 @@ function updateInnerHTML(){
 	
 	
 	//Calling abilities
-	if(abilitySupermarket){
+	if(abilitySupermarket === 1){
 		console.log("it works");
 		document.getElementById('unlockSupermarket').style.display = "block";
 		document.getElementById('lockedSupermarket').style.display = "none";
@@ -178,7 +178,7 @@ levelUp = setInterval(function(){
 //			Abilities			//
 //////////////////////////////////
 var abilitySupermarketCost = 1;
-var abilitySupermarket = false;
+var abilitySupermarket = 0;
 
 function unlockSupermarket(){
 	if(abilityPoints >= abilitySupermarketCost){
@@ -186,7 +186,7 @@ function unlockSupermarket(){
 		document.getElementById('unlockSupermarket').style.display = "block";
 		document.getElementById('lockedSupermarket').style.display = "none";
 		document.getElementById('abilityPoints').innerHTML = abilityPoints;
-		abilitySupermarket = true;
+		abilitySupermarket = 1;
 		console.log(abilitySupermarket);
 	}
 }
