@@ -39,6 +39,7 @@ function updateInnerHTML(){
 	//Calling abilities
 	if(abilitySupermarket){
 		console.log("it works");
+		console.log(abilitySupermarket);
 		document.getElementById('unlockSupermarket').style.display = "block";
 		document.getElementById('lockedSupermarket').style.display = "none";
 	}
