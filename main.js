@@ -278,6 +278,9 @@ function loadGame(){
 	if (typeof loadgame.supermarket !== "undefined") supermarket = loadgame.supermarket;
 	if (typeof loadgame.carwash !== "undefined") carwash = loadgame.carwash;
  	
+	//abilities
+	if (typeof loadgame.abilitySupermarket !== "undefined") abilitySupermarket = loadgame.abilityCarwash;
+	
 	//update all
 	updateInnerHTML();
 }
