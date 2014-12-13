@@ -187,6 +187,7 @@ function unlockSupermarket(){
 		abilityPoints = abilityPoints - abilitySupermarket;
 		document.getElementById('unlockSupermarket').style.visibility = "visible";
 		document.getElementById('lockedSupermarket').style.visibility = "hidden";
+		document.getElementById('abilityPoints').innerHTML = abilityPoints;
 	}
 }
 
