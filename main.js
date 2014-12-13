@@ -38,6 +38,7 @@ function updateInnerHTML(){
 	
 	//Calling abilities
 	if(abilitySupermarket){
+		console.log("it works");
 		document.getElementById('unlockSupermarket').style.display = "block";
 		document.getElementById('lockedSupermarket').style.display = "none";
 	}
@@ -186,6 +187,7 @@ function unlockSupermarket(){
 		document.getElementById('lockedSupermarket').style.display = "none";
 		document.getElementById('abilityPoints').innerHTML = abilityPoints;
 		abilitySupermarket = true;
+		console.log(abilitySupermarket);
 	}
 }
 
