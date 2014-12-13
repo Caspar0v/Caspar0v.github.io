@@ -37,14 +37,11 @@ function updateInnerHTML(){
 	
 	
 	//Calling abilities
-	
+	if(abilitySupermarket){
+		document.getElementById('unlockSupermarket').style.display = "block";
+		document.getElementById('lockedSupermarket').style.display = "none";
+	}
 }
-
-//////////////////////////////
-function textVis(){
-	document.getElementById('test').style.visibility = "visible";
-}
-//////////////////////////////
 
 //////////////////////////////////////
 //			Base Currency			//
@@ -179,15 +176,16 @@ levelUp = setInterval(function(){
 //////////////////////////////////
 //			Abilities			//
 //////////////////////////////////
-var abilitySupermarket = 1;
-
+var abilitySupermarketCost = 1;
+var abilitySupermarket = false;
 
 function unlockSupermarket(){
-	if(abilityPoints >= abilitySupermarket){
-		abilityPoints = abilityPoints - abilitySupermarket;
+	if(abilityPoints >= abilitySupermarketCost){
+		abilityPoints = abilityPoints - abilitySupermarketCost;
 		document.getElementById('unlockSupermarket').style.display = "block";
 		document.getElementById('lockedSupermarket').style.display = "none";
 		document.getElementById('abilityPoints').innerHTML = abilityPoints;
+		abilitySupermarket = true;
 	}
 }
 
@@ -230,10 +228,10 @@ function saveGame(how) {
 	    //machines
 	    paper: paper,
 	    supermarket: supermarket,
-	    carwash: carwash
+	    carwash: carwash,
 	    
 	    //abilities
-	    
+	    abilitySupermarket: abilitySupermarket
 	};
 	localStorage.setItem("save",JSON.stringify(save));
 	console.log("Save local (This is just to make sure it works)");
@@ -303,12 +301,12 @@ window.setInterval(function(){
 
 /*
  * To Do:
- * Xperience ! Ability powers etc.
+ * Ability powers etc.
  * More buildings/jobs.
- * ART !
  * TextLog (pop ups)
  * random events !
  * design website
+ * interactive visuals and art
  * 
  */
 
