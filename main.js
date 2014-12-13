@@ -185,11 +185,9 @@ var abilitySupermarket = 1;
 function unlockSupermarket(){
 	if(abilityPoints >= abilitySupermarket){
 		abilityPoints = abilityPoints - abilitySupermarket;
-		document.getElementById('unlockSupermarket').style.visibility = "visible";
-		document.getElementById('lockedSupermarket').style.visibility = "hidden";
+		document.getElementById('unlockSupermarket').style.display = "block";
+		document.getElementById('lockedSupermarket').style.display = "none";
 		document.getElementById('abilityPoints').innerHTML = abilityPoints;
-		document.getElementById('lockedSupermarket').style.height = "0px";
-		document.getElementById('lockedSupermarket').style.width = "0px";
 	}
 }
 
