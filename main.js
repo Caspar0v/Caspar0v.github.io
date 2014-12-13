@@ -188,6 +188,8 @@ function unlockSupermarket(){
 		document.getElementById('unlockSupermarket').style.visibility = "visible";
 		document.getElementById('lockedSupermarket').style.visibility = "hidden";
 		document.getElementById('abilityPoints').innerHTML = abilityPoints;
+		document.getElementById('lockedSupermarket').style.height = "0px";
+		document.getElementById('lockedSupermarket').style.width = "0px";
 	}
 }
 
