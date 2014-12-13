@@ -281,6 +281,7 @@ function loadGame(){
 	//abilities
 	if (typeof loadgame.abilitySupermarket !== "undefined") abilitySupermarket = loadgame.abilityCarwash;
 	
+	console.log(abilitySupermarket);
 	//update all
 	updateInnerHTML();
 }
