@@ -179,13 +179,15 @@ levelUp = setInterval(function(){
 //////////////////////////////////
 //			Abilities			//
 //////////////////////////////////
+var abilitySupermarket = 1;
+
+
 function unlockSupermarket(){
 	if(abilityPoints >= abilitySupermarket){
-		
-		
-		
+		abilityPoints = abilityPoints - abilitySupermarket
+		document.getElementById('unlockSupermarket').style.visibility = "visible";
+		document.getElementById('lockedSupermarket').style.visibility = "hidden";
 	}
-	
 }
 
 
