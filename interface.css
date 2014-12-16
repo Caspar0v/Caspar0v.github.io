@@ -3,11 +3,34 @@ button.dropt:hover {text-decoration: none; background: #5a96fc; z-index: 0; }
 button.dropt span {position: absolute; left: -9999px;
   margin: 20px 0 0 0px; padding: 3px 3px 3px 3px;
   border-style:solid; border-color:black; border-width:1px; z-index: 6;}
-button.dropt:hover span {left: 2%; background: #ffffff;} 
-button.dropt span {position: absolute; left: -9999px;
-  margin: 4px 0 0 0px; padding: 3px 3px 3px 3px; 
-  border-style:solid; border-color:black; border-width:1px;}
-button.dropt:hover span {margin: 20px 0 0 170px; background: #ffffff; z-index:6;} 
+button.dropt:hover span {
+	left: 2%; 
+	background: #ffffff;
+} 
+button.dropt span {
+	position: absolute; 
+	left: -9999px;
+  	margin: 4px 0 0 0px; 
+  	padding: 3px 3px 3px 3px; 
+  	border-style:solid; 
+  	border-color:black; 
+  	border-width:1px;
+}
+button.dropt:hover span {
+	margin: 20px 0 0 170px; background: #ffffff; z-index:6;
+} 
+button.dropt span span {
+	border-color: transparant;
+	border-width: 0px;
+	align: left;
+	margin: 5px, 0, 0, 0;
+}
+button.dropt:hover span span{
+	border-color: white;
+	border-width: 0px;
+	align: left;
+	margin: 5px, 0, 0, 0;
+}
 
 body, html {
           height: 100%;
