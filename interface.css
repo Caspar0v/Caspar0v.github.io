@@ -9,85 +9,6 @@ button.dropt span {position: absolute; left: -9999px;
   border-style:solid; border-color:black; border-width:1px;}
 button.dropt:hover span {margin: 20px 0 0 170px; background: #ffffff; z-index:6;} 
 
-CSS:
-
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-42
-43
-44
-45
-46
-47
-48
-49
-50
-51
-52
-53
-54
-55
-56
-57
-58
-59
-60
-61
-62
-63
-64
-65
-66
-67
-68
-69
-70
-71
-72
-73
-74
-75
-76
-77
 body, html {
           height: 100%;
           margin: 0;
@@ -109,7 +30,7 @@ body, html {
         list-style: none;
         position: relative;
         padding: 0;
-        margin: 75px auto;
+        margin: 20px auto;
       }
       .tabs li{
         float: left;
@@ -117,15 +38,15 @@ body, html {
       .tabs label {
           display: block;
           padding: 10px 20px;
-          border-radius: 2px 2px 0 0;
+          border-radius: 5px 5px 5px 5px;
           color: #08C;
           font-size: 24px;
           font-weight: normal;
           font-family: 'Lily Script One', helveti;
-          background: rgba(255,255,255,0.2);
+          background: transparant;
           cursor: pointer;
           position: relative;
-          top: 3px;
+          top: 12px;
           -webkit-transition: all 0.2s ease-in-out;
           -moz-transition: all 0.2s ease-in-out;
           -o-transition: all 0.2s ease-in-out;
@@ -146,18 +67,19 @@ body, html {
           display: block;
       }
       .tab-content{
+      	border-radius: 10px 10px 10px 10px;
         z-index: 2;
         display: none;
         text-align: left;
         width: 100%;
-        font-size: 20px;
-        line-height: 140%;
+        font-size: 16px;
+        line-height: 150%;
         padding-top: 10px;
-        background: #08C;
-        padding: 15px;
+        background: #558dc0;
+        padding: 10px;
         color: white;
         position: absolute;
-        top: 53px;
+        top: 50px;
         left: 0;
         box-sizing: border-box;
         -webkit-animation-duration: 0.5s;

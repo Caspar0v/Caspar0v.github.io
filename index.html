@@ -19,79 +19,59 @@
 		<button onclick="coinClick(1)">Click Me!</button>
 		<br />
 		Coins: <span id="coin">0</span>
-		
-		<br /><br />
-		
-		Jobs : <br />
-		
-		<button onclick="buyPaper()" class="dropt" >Paperboy
-		<span style="width: 240px; height: 160px">Blackmail the paperboy with his nudies
-		</span></button>
-		Paperround: <span id="paper">0</span><br />
-		Cost: <span id="paperCost">10</span><br />
-		
-		<div id="unlockSupermarket" style="display: none">
-		<button onclick="buySupermarket()" class="dropt">Supermarket
-		<span style="width: 240px; height: 160px"> SUPERMARKETS !!!!</span></button>
-		Supermarket: <span id="supermarket">0</span><br />
-		cost: <span id="supermarketCost">50</span><br /></div>
-		<button onclick="unlockSupermarket()" id="lockedSupermarket" style="display: block">Unlock super</button>
-		<button onclick="buyCarwash()" class="dropt">Car Washing
-		<span style="width: 240px; height: 160px">
-		"Working at the car wash (oh oh, yeah yeah)
-		At the car wash, yeah (ooh, yeah yeah)
-		At the car wash (sing it with me now)
-		Working at the car wash, yeah"
-		- Christina aguilera, 2007
-		</span></button>
-		Car washing: <span id="carwash">0</span><br />
-		cost: <span id="carwashCost">250</span><br /><br />
-		
-		<button onclick="clickPower(1)">Power up!</button>
-		Per click: <span id="power">1</span><br />
-		Costs <span id="powerCost">32</span><br />
-		
-		<br /><br /><br />
-		<button onclick="saveGame('local')">Save</button><br/>
-		
-		<button onclick="loadGame()">Load</button><br/>
-		
-		<button onclick="delSave()">Delete save</button><br/>
-		
-		<button onclick="saveGame('auto')">auto save</button> 
-		State: <span id="autoState">On</span>
-		
-		<br/><br/><br/>
-		AbilityPoints: <span id="abilityPoints">1</span><br/>
-		<span id="experience">0</span> / <span id="levelCost">127</span>
-		
-		
-		
-		
 		<ul class="tabs">
         <li>
-          <input type="radio" checked name="tabs" id="tab1">
-          <label for="tab1">tab 1</label>
-          <div id="tab-content1" class="tab-content animated fadeIn">
-    ...
-          </div>
+         	<input type="radio" checked name="tabs" id="tab1">
+         	<label for="tab1">Game</label>
+         	<div id="tab-content1" class="tab-content animated fadeIn">
+ 				Jobs : <br />
+					<button onclick="buyPaper()" class="dropt" >Paperboy
+					<span style="width: 240px; height: 160px">Blackmail the paperboy with his nudies
+					</span></button>
+					Paperround: <span id="paper">0</span><br />
+					Cost: <span id="paperCost">10</span><br />
+					
+					<div id="unlockSupermarket" style="display: none">
+					<button onclick="buySupermarket()" class="dropt">Supermarket
+					<span style="width: 240px; height: 160px"> SUPERMARKETS !!!!</span></button>
+					Supermarket: <span id="supermarket">0</span><br />
+					cost: <span id="supermarketCost">50</span><br /></div>
+					<button onclick="buyCarwash()" class="dropt">Car Washing
+					<span style="width: 240px; height: 160px">
+					"Working at the car wash (oh oh, yeah yeah)
+					At the car wash, yeah (ooh, yeah yeah)
+					At the car wash (sing it with me now)
+					Working at the car wash, yeah"
+					- Christina aguilera, 2007
+					</span></button>
+					Car washing: <span id="carwash">0</span><br />
+					cost: <span id="carwashCost">250</span><br /><br />
+					<button onclick="clickPower(1)">Power up!</button>
+					Per click: <span id="power">1</span><br />
+					Costs <span id="powerCost">32</span><br />
+          	</div>
         </li>
         <li>
-          <input type="radio" name="tabs" id="tab2">
-          <label for="tab2">tab 2</label>
-          <div id="tab-content2" class="tab-content animated fadeIn">
-            ...
-          </div>
+          	<input type="radio" name="tabs" id="tab2">
+          	<label for="tab2">Menu</label>
+          	<div id="tab-content2" class="tab-content animated fadeIn">
+            	<button onclick="saveGame('local')">Save</button><br/>
+				<button onclick="loadGame()">Load</button><br/>
+				<button onclick="delSave()">Delete save</button><br/>
+				<button onclick="saveGame('auto')">auto save</button> 
+				State: <span id="autoState">On</span>
+         	</div>
         </li>
         <li>
-          <input type="radio" name="tabs" id="tab3">
-          <label for="tab3">tab 3</label>
-          <div id="tab-content3" class="tab-content animated fadeIn">
-            ...
-          </div>
+          	<input type="radio" name="tabs" id="tab3">
+          	<label for="tab3">Abilities</label>
+          	<div id="tab-content3" class="tab-content animated fadeIn">
+          		AbilityPoints: <span id="abilityPoints">1</span><br/>
+				<span id="experience">0</span> / <span id="levelCost">127</span>
+				</br>
+            	<button onclick="unlockSupermarket()" id="lockedSupermarket" style="display: block">Unlock super</button>
+          	</div>
         </li>
-</ul>
-		
+	</ul>	
 	</body>
-
 </html>
