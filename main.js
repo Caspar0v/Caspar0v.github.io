@@ -38,10 +38,12 @@ function updateInnerHTML(){
 	
 	//Calling abilities
 	if(abilitySupermarket){
-		console.log("it works");
-		console.log(abilitySupermarket);
 		document.getElementById('unlockSupermarket').style.display = "block";
 		document.getElementById('lockedSupermarket').style.display = "none";
+	}
+	if(abilityCarwash){
+		document.getElementById('unlockCarwash').style.display = "block";
+		document.getElementById('lockedCarwash').style.display = "none";
 	}
 }
 
@@ -180,6 +182,8 @@ levelUp = setInterval(function(){
 //////////////////////////////////
 var abilitySupermarketCost = 1;
 var abilitySupermarket = false;
+var abilityCarwashCost = 2;
+var abilityCarwash = false;
 
 function unlockSupermarket(){
 	if(abilityPoints >= abilitySupermarketCost){
@@ -188,11 +192,18 @@ function unlockSupermarket(){
 		document.getElementById('lockedSupermarket').style.display = "none";
 		document.getElementById('abilityPoints').innerHTML = abilityPoints;
 		abilitySupermarket = true;
-		console.log(abilitySupermarket);
 	}
 }
 
-
+function unlockCarwash(){
+	if(abilityPoints >= abilityCarwashCost){
+		abilityPoints = abilityPoints - abilityCarwashCost;
+		document.getElementById('unlockCarwash').style.display = "block";
+		document.getElementById('lockedCarwash').style.display = "none";
+		document.getElementById('abilityPoints').innerHTML = abilityPoints;
+		abilityCarwash = true;
+	}
+}
 
 //////////////////////////////////
 //			SaveGame			//
@@ -234,7 +245,8 @@ function saveGame(how) {
 	    carwash: carwash,
 	    
 	    //abilities
-	    abilitySupermarket: abilitySupermarket
+	    abilitySupermarket: abilitySupermarket,
+	    abilityCarwash: abilityCarwash
 	};
 	localStorage.setItem("save",JSON.stringify(save));
 	console.log("Save local (This is just to make sure it works)");
@@ -283,8 +295,8 @@ function loadGame(){
  	
 	//abilities
 	if (typeof loadgame.abilitySupermarket !== "undefined") abilitySupermarket = loadgame.abilitySupermarket;
+	if (typeof loadgame.abilityCarwash !== "undefined") abilityCarwash = loadgame.abilityCarwash;
 	
-	console.log(abilitySupermarket);
 	//update all
 	updateInnerHTML();
 }
