@@ -20,11 +20,13 @@
 		<br />
 		Coins: <span id="coin">0</span>
 		<ul class="tabs">
+		<!-- The whole game part -->
         <li>
          	<input type="radio" checked name="tabs" id="tab1">
          	<label for="tab1">Game</label>
          	<div id="tab-content1" class="tab-content animated fadeIn">
  				Jobs : <br />
+ 				<!-- Paper -->
 					<button onclick="buyPaper()" class="dropt" >Paperboy
 					<p>The papers aren't going to deliver itself !</br></br>
 					____________________________________</br></br>
@@ -33,13 +35,14 @@
 					Paperround: <span id="paper">0</span>
 					<!--  <iframe style="height: 200px; width: 200px; color: black; position: fixed; align-self: right" ></iframe>-->
 					<br />
+				<!-- Supermarkets -->
 					<div id="unlockSupermarket" style="display: none">
 					<button onclick="buySupermarket()" class="dropt">Convenience store
 					<p>Comes with the drug dealer behind it.</br></br>
 					____________________________________</br></br>
 					Cost: <span id="supermarketCost">50</span></p></button>
 					Supermarket: <span id="supermarket">0</span></div>
-					
+				<!-- Carwash -->
 					<div id="unlockCarwash" style="display: none">
 					<button onclick="buyCarwash()" class="dropt">Car Washing
 					<p>
@@ -59,6 +62,7 @@
 					Costs <span id="powerCost">32</span><br />
           	</div>
         </li>
+        <!-- Menu buttons -->
         <li>
           	<input type="radio" name="tabs" id="tab2">
           	<label for="tab2">Menu</label>
@@ -70,6 +74,7 @@
 				State: <span id="autoState">On</span>
          	</div>
         </li>
+        <!-- Abilities tab -->
         <li>
           	<input type="radio" name="tabs" id="tab3">
           	<label for="tab3">Abilities</label>
