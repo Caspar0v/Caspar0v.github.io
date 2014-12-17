@@ -268,6 +268,7 @@ function saveGame(how) {
 					autoSaveTime = 10;
 					console.log("Saved auto (Just to make sure autosave works)");
 					saveGame("local");
+					document.getElementById('autosave').style.display = "block";
 				}
 			},1000);
 			autoState = "On";

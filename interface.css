@@ -36,6 +36,21 @@ button.dropt:hover p {
 	z-index:6;
 } 
 
+div.autosave {
+	position:fixed;
+	right:30px;
+	bottom:-82px;
+	z-index:9999999;
+	border:1px solid black;
+	background:white;
+	padding:10px 10px 50px 10px;
+	box-sizing: border-box;
+	-webkit-animation-duration: 1s;
+    -o-animation-duration: 1s;
+    -moz-animation-duration: 1s;
+    animation-duration: 1s;
+}
+
 body, html {
           height: 100%;
           margin: 20px;
