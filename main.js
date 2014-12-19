@@ -250,6 +250,14 @@ function saveGame(how) {
 	};
 	localStorage.setItem("save",JSON.stringify(save));
 	console.log("Save local (This is just to make sure it works)");
+	
+	/*document.getElementById('autosave').style.visibility = "visible";
+	document.getElementById('autosave').style.opacity = "1";
+	document.getElementById('autosave').style.transition = "opacity 2s linear";
+	document.getElementById('autosave').style.visibility = "hidden";
+	document.getElementById('autosave').style.opacity = "0";
+	document.getElementById('autosave').style.transition = "visibility 0s 2s, opacity 2s linear";*/
+	
 	}
 	//Autosave ==============================
 	else if(how=="auto"){
@@ -268,7 +276,6 @@ function saveGame(how) {
 					autoSaveTime = 10;
 					console.log("Saved auto (Just to make sure autosave works)");
 					saveGame("local");
-					document.getElementById('autosave').style.display = "block";
 				}
 			},1000);
 			autoState = "On";

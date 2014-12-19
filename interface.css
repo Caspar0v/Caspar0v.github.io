@@ -37,18 +37,15 @@ button.dropt:hover p {
 } 
 
 div.autosave {
-	position:fixed;
-	right:30px;
-	bottom:-82px;
-	z-index:9999999;
-	border:1px solid black;
-	background:white;
-	padding:10px 10px 50px 10px;
-	box-sizing: border-box;
-	-webkit-animation-duration: 1s;
-    -o-animation-duration: 1s;
-    -moz-animation-duration: 1s;
-    animation-duration: 1s;
+  	visibility: hidden;
+  	opacity: 0;
+  	transition: visibility 0s 2s, opacity 2s linear;
+  	z-index: 9999;
+  	margin: 10px 0 0 0px; 
+  	padding: 10px 10px 10px 10px; 
+ 	border-style:solid; 
+ 	border-color:black; 
+ 	border-width:1px;
 }
 
 body, html {
