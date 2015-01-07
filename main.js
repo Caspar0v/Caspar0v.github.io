@@ -392,6 +392,7 @@ window.setInterval(function(){
 	coinAuto(supermarket * 2);
 	coinAuto(carwash * 5);
 	coinAuto(badbroker * 8);
+	coinAuto(motel * 15);
 	
 }, 1000);
 
