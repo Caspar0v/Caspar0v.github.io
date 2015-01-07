@@ -21,6 +21,7 @@
 		Coins: <span id="coin">0</span>
 	<!-- The whole game part -->
 		<ul class="tabs">
+        <!-- Buildings Etc. -->
         <li>
          	<input type="radio" checked name="tabs" id="tab1">
          	<label for="tab1">Game</label>
@@ -57,6 +58,17 @@
 					Cost: <span id="carwashCost">250</span>
 					</p></button>
 					Car washing: <span id="carwash">0</span></div>
+				<!-- Bad broker -->
+				<div id="unlockBadbroker" style="display: none">
+					<button onclick="buyBadbroker()" class="dropt">Pennystock Broker
+					<p>
+					Yeah, Sell em !
+					Pennystocks aren't going to sell themselves.
+					</br></br>
+					____________________________________</br></br>
+					Cost: <span id="badbrokerCost">500</span>
+					</p></button>
+					Pennystock Broker: <span id="badbroker">0</span></div>
 					<button onclick="clickPower(1)">Power up!</button>
 					Per click: <span id="power">1</span><br />
 					Costs <span id="powerCost">32</span><br />
@@ -82,8 +94,21 @@
           		AbilityPoints: <span id="abilityPoints">1</span><br/>
 				<span id="experience">0</span> / <span id="levelCost">127</span>
 				</br>
-            	<button onclick="unlockSupermarket()" id="lockedSupermarket" style="display: block">Unlock Convenience store</button>
-            	<button onclick="unlockCarwash()" id="lockedCarwash" style="display: block">Unlock Carwash</button>
+            	<button onclick="unlockSupermarket()" id="lockedSupermarket" style="display: block" class="dropt">Unlock Convenience store
+					<p>So you want some convenience ? </br></br>
+					____________________________________</br></br>
+					Cost: 1 Ability Point
+					</p></button>
+            	<button onclick="unlockCarwash()" id="lockedCarwash" style="display: block" class="dropt">Unlock Carwash
+            		<p>Create your own washing gang </br></br>
+					____________________________________</br></br>
+					Cost: 2 Ability Points
+				</p></button>
+				<button onclick="unlockBadbroker()" id="lockedBadbroker" style="display: block" class="dropt">Unlock Pennystocks
+            		<p>Be a wolf, Be a broker</br></br>
+					____________________________________</br></br>
+					Cost: 4 Ability Points
+				</p></button>
           	</div>
         </li>
 	</ul>
