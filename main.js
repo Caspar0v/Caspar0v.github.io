@@ -16,12 +16,14 @@ function updateInnerHTML(){
 	document.getElementById('supermarket').innerHTML = supermarket;
 	document.getElementById('carwash').innerHTML = carwash;
 	document.getElementById('badbroker').innerHTML = badbroker;
+	document.getElementById('motel').innerHTML = motel;
 	
 	//Calculating next costs based on your machines.
 	var nextPaperCost = Math.floor(10 * Math.pow(1.3, paper));
 	var nextSupermarketCost = Math.floor(50 * Math.pow(1.5, supermarket));
 	var nextCarwashCost = Math.floor(250 * Math.pow(1.4, carwash));
 	var nextBadbrokerCost = Math.floor(500 * Math.pow(1.5, badbroker));
+	var nextMotelCost = Math.floor(1200 * Math.pow(1.4, motel));
 	
 	//Calculating next currencies related cost.
 	var nextPowerCost = Math.floor(16 * Math.pow(2, power));
@@ -34,7 +36,8 @@ function updateInnerHTML(){
 	document.getElementById("powerCost").innerHTML = nextPowerCost;
 	document.getElementById('carwashCost').innerHTML = nextCarwashCost;
 	document.getElementById('badbrokerCost').innerHTML = nextBadbrokerCost;
-
+	document.getElementById('motelCost').innerHTML = nextMotelCost;
+	
 	//Calling the price of currency related things
 	document.getElementById("levelCost").innerHTML = nextLevelCost;
 	
@@ -51,6 +54,10 @@ function updateInnerHTML(){
 	if(abilityBadbroker){
 		document.getElementById('unlockBadbroker').style.display = "block";
 		document.getElementById('lockedBadbroker').style.display = "none";
+	}
+	if(abilityMotel){
+		document.getElementById('unlockMotel').style.display = "block";
+		document.getElementById('lockedMotel').style.display = "none";
 	}
 }
 
@@ -85,6 +92,7 @@ var paper = 0;
 var supermarket = 0;
 var carwash = 0;
 var badbroker = 0;
+var motel = 0;
 
 // ---------------- Paperrounds !
 function buyPaper(number) {
@@ -138,13 +146,28 @@ function buyBadbroker(number) {
 	document.getElementById('badbrokerCost').innerHTML = nextBadbrokerCost;
 }
 
+//---------------- Motel !
+function buyMotel(number) {
+	var motelCost = Math.floor(1200 * Math.pow(1.4, motel));
+	if(coin >= motelCost){
+		motel = motel + 1;
+		coin = coin - motelCost;
+		document.getElementById('motel').innerHTML = motel;
+		document.getElementById('coin').innerHTML = coin;
+	};
+	var nextMotelCost = Math.floor(1200 * Math.pow(1.4, motel));
+	document.getElementById('motelCost').innerHTML = nextMotelCost;
+}
+
+
 /*Things to add
  * good broker
  * hotel
  * motel
  * real estate
+ * Drugs
+ * Corrupt police
  * lawyer
- * teacher
  */
 
 //////////////////////////////////////////////
@@ -207,9 +230,12 @@ var abilitySupermarket = false;
 //To unlock Carwash
 var abilityCarwashCost = 2;
 var abilityCarwash = false;
-//To unlock Badbroker;
+//To unlock Badbroker
 var abilityBadbrokerCost = 4;
 var abilityBadbroker = false;
+//To unlock Motel
+var abilityMotelCost = 7;
+var abilityMotel = false;
 
 function unlockSupermarket(){
 	if(abilityPoints >= abilitySupermarketCost){
@@ -237,6 +263,15 @@ function unlockBadbroker(){
 		document.getElementById('lockedBadbroker').style.display = "none";
 		document.getElementById('abilityPoints').innerHTML = abilityPoints;
 		abilityBadbroker = true;
+	}
+}
+function unlockMotel(){
+	if(abilityPoints >= abilityMotelCost){
+		abilityPoints = abilityPoints - abilityMotelCost;
+		document.getElementById('unlockMotel').style.display = "block";
+		document.getElementById('lockedMotel').style.display = "none";
+		document.getElementById('abilityPoints').innerHTML = abilityPoints;
+		abilityMotel = true;
 	}
 }
 
@@ -279,11 +314,13 @@ function saveGame(how) {
 	    supermarket: supermarket,
 	    carwash: carwash,
 	    badbroker: badbroker,
+	    motel: motel,
 	    
 	    //abilities
 	    abilitySupermarket: abilitySupermarket,
 	    abilityCarwash: abilityCarwash,
-	    abilityBadbroker: abilityBadbroker
+	    abilityBadbroker: abilityBadbroker,
+	    abilityMotel: abilityMotel
 	};
 	localStorage.setItem("save",JSON.stringify(save));
 	console.log("Save local (This is just to make sure it works)");
@@ -330,11 +367,13 @@ function loadGame(){
 	if (typeof loadgame.supermarket !== "undefined") supermarket = loadgame.supermarket;
 	if (typeof loadgame.carwash !== "undefined") carwash = loadgame.carwash;
 	if (typeof loadgame.badbroker !== "undefined") badbroker = loadgame.badbroker;
+	if (typeof loadgame.motel !== "undefined") motel = loadgame.motel;
  	
 	//abilities
 	if (typeof loadgame.abilitySupermarket !== "undefined") abilitySupermarket = loadgame.abilitySupermarket;
 	if (typeof loadgame.abilityCarwash !== "undefined") abilityCarwash = loadgame.abilityCarwash;
 	if (typeof loadgame.abilityBadbroker !== "undefined") abilityBadbroker = loadgame.abilityBadbroker;
+	if (typeof loadgame.abilityMotel !== "undefined") abilityMotel = loadgame.abilityMotel;
 	
 	//update all
 	updateInnerHTML();
