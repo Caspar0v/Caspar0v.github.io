@@ -282,7 +282,8 @@ function saveGame(how) {
 	    
 	    //abilities
 	    abilitySupermarket: abilitySupermarket,
-	    abilityCarwash: abilityCarwash
+	    abilityCarwash: abilityCarwash,
+	    abilityBadbroker: abilityBadbroker
 	};
 	localStorage.setItem("save",JSON.stringify(save));
 	console.log("Save local (This is just to make sure it works)");
@@ -333,6 +334,7 @@ function loadGame(){
 	//abilities
 	if (typeof loadgame.abilitySupermarket !== "undefined") abilitySupermarket = loadgame.abilitySupermarket;
 	if (typeof loadgame.abilityCarwash !== "undefined") abilityCarwash = loadgame.abilityCarwash;
+	if (typeof loadgame.abilityBadbroker !== "undefined") abilityBadbroker = loadgame.abilityBadbroker;
 	
 	//update all
 	updateInnerHTML();
