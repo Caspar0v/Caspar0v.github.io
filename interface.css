@@ -43,6 +43,7 @@ body, html {
           font-weight: 100;
           background: url(https://raw.githubusercontent.com/Caspar0v/Caspar0v.github.io/master/background.jpeg) no-repeat;
           background-size: 100% 100%;
+          background-opacity: 60%;
           text-align: center;
           font-family: helvetica;
       }
