@@ -42,7 +42,8 @@ body, html {
           margin: 20px;
           -webkit-font-smoothing: antialiased;
           font-weight: 100;
-          background: #aadfeb;
+          background: url(https://raw.githubusercontent.com/Caspar0v/Caspar0v.github.io/master/background.jpeg) no-repeat;
+          background-size: 100%;
           text-align: center;
           font-family: helvetica;
       }
