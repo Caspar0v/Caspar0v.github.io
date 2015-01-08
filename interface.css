@@ -37,15 +37,22 @@ button.dropt:hover p {
 } 
 
 
-body, html {
+body  {
           height: 100%;
           -webkit-font-smoothing: antialiased;
           font-weight: 100;
-          background: url(https://raw.githubusercontent.com/Caspar0v/Caspar0v.github.io/master/background.jpeg) no-repeat;
-          background-size: 100% 100%;
           text-align: center;
           font-family: helvetica;
       }
+html {
+		  height: 100%;
+          -webkit-font-smoothing: antialiased;
+          font-weight: 100;
+          text-align: center;
+          font-family: helvetica;
+          background: url(https://raw.githubusercontent.com/Caspar0v/Caspar0v.github.io/master/thebrokeone.jpeg) no-repeat;
+          background-size: 100% 100%;
+}
        
       .tabs input[type=radio] {
           position: absolute;
