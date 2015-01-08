@@ -163,8 +163,8 @@ function buyMotel(number) {
 /*Things to add
  * good broker
  * hotel
- * motel
  * real estate
+ * pimp (don't mind the dead hookers) (rival the kissing company from across town)
  * Drugs
  * Corrupt police
  * lawyer
