@@ -1,8 +1,12 @@
 button.dropt {
 	background: #3698fe;
+	border-style: solid; 
+  	border-color: #2063c3; 
+  	border-width: 1px; 
 }
 button.dropt:hover {
 	background: #0029fa;
+	color: #d4d4d4;
 	z-index: 0; 
 }
 button.dropt p {
@@ -16,14 +20,15 @@ button.dropt p {
   	z-index: 6;
 }
 button.dropt:hover p {
-	left: 2%; 
-	background: #ffffff;
+	left: 20%; 
+	background: #bce3ff;
 } 
 button.dropt p {
 	position: absolute; 
 	left: -9999px;
   	margin: 10px 0 0 0px; 
   	padding: 10px 10px 10px 10px; 
+  	border-radius: 10px 10px 10px 10px;
   	border-style:solid; 
   	border-color:black; 
   	border-width:1px;
@@ -31,9 +36,10 @@ button.dropt p {
   	width: 200px;
 }
 button.dropt:hover p {
-	margin: 20px 0 0 100px; 
-	background: #ffffff; 
+	margin: -50px 0 0 100px; 
+	background: #bce3ff; 
 	z-index:6;
+	color: black;
 } 
 
 
