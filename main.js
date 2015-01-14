@@ -61,6 +61,8 @@ function updateInnerHTML(){
 	}
 }
 
+//document.getElementById("messageBox").innerHTML += "This is a new message.<br />";
+
 //////////////////////////////////////
 //			Base Currency			//
 //////////////////////////////////////
@@ -243,6 +245,7 @@ function unlockSupermarket(){
 		document.getElementById('unlockSupermarket').style.display = "block";
 		document.getElementById('lockedSupermarket').style.display = "none";
 		document.getElementById('abilityPoints').innerHTML = abilityPoints;
+	    document.getElementById("messageBox").innerHTML += "Unlocked Convenience Store.<br />";
 		abilitySupermarket = true;
 	}
 }
@@ -341,6 +344,7 @@ function saveGame(how) {
 				if(autoSaveTime == 0) {
 					autoSaveTime = 10;
 					console.log("Saved auto (Just to make sure autosave works)");
+					
 					saveGame("local");
 				}
 			},1000);
