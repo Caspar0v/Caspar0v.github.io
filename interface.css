@@ -7,10 +7,11 @@ div.left{
 	margin: 20 0 0 10;
 }
 div.messageBox {
-       	right: -5%;
-       	margin: 20;
-       	
-    }
+
+}
+div.total {
+	margin: 10px auto;
+}
 button.dropt {
 	background: #3698fe;
 	border-style: solid; 
