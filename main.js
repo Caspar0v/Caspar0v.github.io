@@ -343,8 +343,7 @@ function saveGame(how) {
 				autoSaveTime--;
 				if(autoSaveTime == 0) {
 					autoSaveTime = 10;
-					console.log("Saved auto (Just to make sure autosave works)");
-					
+					document.getElementById("messageBox").innerHTML += "Autosaved !<br />";
 					saveGame("local");
 				}
 			},1000);
