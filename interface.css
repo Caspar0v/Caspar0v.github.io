@@ -2,7 +2,7 @@ div.right{
 	right: 10;
 }
 div.left{
-	margin: 0 0 0 -200;
+	margin: 20 0 0 10;
 }
 div.messageBox {
        	right: -5%;
@@ -83,7 +83,6 @@ html {
         list-style: none;
         position: relative;
         padding: 0;
-        margin: 10px auto;
       }
       .tabs li{
         float: left;
