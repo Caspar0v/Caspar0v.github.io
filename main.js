@@ -327,6 +327,7 @@ function saveGame(how) {
 	};
 	localStorage.setItem("save",JSON.stringify(save));
 	console.log("Save local (This is just to make sure it works)");
+	document.getElementById("messageBox").innerHTML += "Saved !<br />";
 	}
 	//Autosave ==============================
 	else if(how=="auto"){
@@ -343,7 +344,6 @@ function saveGame(how) {
 				autoSaveTime--;
 				if(autoSaveTime == 0) {
 					autoSaveTime = 10;
-					document.getElementById("messageBox").innerHTML += "Autosaved !<br />";
 					saveGame("local");
 				}
 			},1000);
