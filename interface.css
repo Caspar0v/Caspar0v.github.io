@@ -1,6 +1,7 @@
 div.right{
 	right: 0;
 	margin: 20 0 0 -10;
+	text-align: right;
 }
 div.left{
 	left: 0;

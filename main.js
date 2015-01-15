@@ -63,6 +63,7 @@ function updateInnerHTML(){
 
 //document.getElementById("messageBox").innerHTML += "This is a new message.<br />";
 
+
 //////////////////////////////////////
 //			Base Currency			//
 //////////////////////////////////////
@@ -256,6 +257,7 @@ function unlockCarwash(){
 		document.getElementById('unlockCarwash').style.display = "block";
 		document.getElementById('lockedCarwash').style.display = "none";
 		document.getElementById('abilityPoints').innerHTML = abilityPoints;
+		document.getElementById("messageBox").innerHTML += "Unlocked Carwash.<br />";
 		abilityCarwash = true;
 	}
 }
@@ -265,6 +267,7 @@ function unlockBadbroker(){
 		document.getElementById('unlockBadbroker').style.display = "block";
 		document.getElementById('lockedBadbroker').style.display = "none";
 		document.getElementById('abilityPoints').innerHTML = abilityPoints;
+		document.getElementById("messageBox").innerHTML += "Unlocked Pennystock Broker.<br />";
 		abilityBadbroker = true;
 	}
 }
@@ -274,6 +277,7 @@ function unlockMotel(){
 		document.getElementById('unlockMotel').style.display = "block";
 		document.getElementById('lockedMotel').style.display = "none";
 		document.getElementById('abilityPoints').innerHTML = abilityPoints;
+		document.getElementById("messageBox").innerHTML += "Unlocked the Motel.<br />";
 		abilityMotel = true;
 	}
 }
