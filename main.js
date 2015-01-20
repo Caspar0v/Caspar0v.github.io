@@ -438,6 +438,7 @@ window.setInterval(function(){
 	coinAuto(badbroker * 8);
 	coinAuto(motel * 15);
 	
+	datetime
 }, 1000);
 
 
