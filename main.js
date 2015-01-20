@@ -63,6 +63,45 @@ function updateInnerHTML(){
 
 //document.getElementById("messageBox").innerHTML += "This is a new message.<br />";
 
+var MAX_LOG_MESSAGES = 10;
+
+var prepend = true; // set this to true for new messages to be added at the top, false to be added at the bottom
+
+// only used to show that messages are different
+var counter = 0;
+
+function addMsg(message) {
+    var x = document.getElementById("messageBox");
+    if(prepend) {
+        x.innerHTML = message + x.innerHTML; 
+    } else {
+        x.innerHTML += message; 
+    }    
+    counter++;
+    
+    // split up the contents of the messageBox div based on line breaks, <br>
+    var logContents = x.innerHTML.split("<br>");
+    var numMessages = logContents.length;
+    
+    if(numMessages > MAX_LOG_MESSAGES) {
+        // we've gone over the limit, remove the oldest message 
+        // (first message in the array)
+        // because the array is made from the string, the order of the string is _vital_
+        if(prepend) {
+            // first message is at the bottom, ergo last element in the array   
+            logContents.pop();
+        } else {
+            // first element is at the top, ergo first element in the array
+            logContents.shift();
+        }
+        // make the array back into a single string
+        // and update the html contents of the messageBox div
+        var messageBoxContents = logContents.join("<br>");        
+        x.innerHTML = messageBoxContents;
+    }
+}
+
+
 
 //////////////////////////////////////
 //			Base Currency			//
@@ -246,7 +285,7 @@ function unlockSupermarket(){
 		document.getElementById('unlockSupermarket').style.display = "block";
 		document.getElementById('lockedSupermarket').style.display = "none";
 		document.getElementById('abilityPoints').innerHTML = abilityPoints;
-	    document.getElementById("messageBox").innerHTML += "Unlocked Convenience Store.<br />";
+		addMsg("Unlocked Convenience Store.<br />");
 		abilitySupermarket = true;
 	}
 }
@@ -257,7 +296,7 @@ function unlockCarwash(){
 		document.getElementById('unlockCarwash').style.display = "block";
 		document.getElementById('lockedCarwash').style.display = "none";
 		document.getElementById('abilityPoints').innerHTML = abilityPoints;
-		document.getElementById("messageBox").innerHTML += "Unlocked Carwash.<br />";
+		addMsg("Unlocked Carwash.<br />");
 		abilityCarwash = true;
 	}
 }
@@ -267,7 +306,7 @@ function unlockBadbroker(){
 		document.getElementById('unlockBadbroker').style.display = "block";
 		document.getElementById('lockedBadbroker').style.display = "none";
 		document.getElementById('abilityPoints').innerHTML = abilityPoints;
-		document.getElementById("messageBox").innerHTML += "Unlocked Pennystock Broker.<br />";
+		addMsg("Unlocked Pennystock Broker.<br />");
 		abilityBadbroker = true;
 	}
 }
@@ -277,7 +316,7 @@ function unlockMotel(){
 		document.getElementById('unlockMotel').style.display = "block";
 		document.getElementById('lockedMotel').style.display = "none";
 		document.getElementById('abilityPoints').innerHTML = abilityPoints;
-		document.getElementById("messageBox").innerHTML += "Unlocked the Motel.<br />";
+		addMsg("Unlocked the Motel.<br />");
 		abilityMotel = true;
 	}
 }
@@ -331,7 +370,7 @@ function saveGame(how) {
 	};
 	localStorage.setItem("save",JSON.stringify(save));
 	console.log("Save local (This is just to make sure it works)");
-	document.getElementById("messageBox").innerHTML += "Saved !<br />";
+	addMsg("Saved ! </br>");
 	}
 	//Autosave ==============================
 	else if(how=="auto"){
