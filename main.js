@@ -61,14 +61,13 @@ function updateInnerHTML(){
 	}
 }
 
-//document.getElementById("messageBox").innerHTML += "This is a new message.<br />";
+var currentdate = new Date();
+var datetime =  "[" +	currentdate.getHours() + ":"  
+				+ currentdate.getMinutes() + "]";
 
 var MAX_LOG_MESSAGES = 10;
-
-var prepend = true; // set this to true for new messages to be added at the top, false to be added at the bottom
-
-// only used to show that messages are different
-var counter = 0;
+//set this to true for new messages to be added at the top, false to be added at the bottom
+var prepend = true;
 
 function addMsg(message) {
     var x = document.getElementById("messageBox");
@@ -76,8 +75,7 @@ function addMsg(message) {
         x.innerHTML = message + x.innerHTML; 
     } else {
         x.innerHTML += message; 
-    }    
-    counter++;
+    };
     
     // split up the contents of the messageBox div based on line breaks, <br>
     var logContents = x.innerHTML.split("<br>");
@@ -370,7 +368,7 @@ function saveGame(how) {
 	};
 	localStorage.setItem("save",JSON.stringify(save));
 	console.log("Save local (This is just to make sure it works)");
-	addMsg("Saved ! </br>");
+	addMsg(datetime + " Saved !</br>");
 	}
 	//Autosave ==============================
 	else if(how=="auto"){
