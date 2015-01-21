@@ -22,12 +22,12 @@ div.messageBox {
 	
 }
 div.header{
-	position: fixed;
+	position: absolute;
 	text-align: center;
-	height: 20%;
+	height: 15%;
 	width: 100%;
 	top: 50;
-	z: 10;
+	z-index: 3;
 }
 div.total {
 	margin: 50px auto;
@@ -82,7 +82,7 @@ body  {
           font-weight: 100;
           text-align: center;
           font-family: helvetica;
-          background: url(https://raw.githubusercontent.com/Caspar0v/Caspar0v.github.io/master/thebrokeone.jpeg);
+        background: url(https://raw.githubusercontent.com/Caspar0v/Caspar0v.github.io/master/thebrokeone.jpeg);
     	background-size: 100% 110%;
     	background-attachment: fixed;
       }

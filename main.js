@@ -83,7 +83,7 @@ function date_time()
         return result;
 }
 
-var MAX_LOG_MESSAGES = 10;
+var MAX_LOG_MESSAGES = 20;
 //set this to true for new messages to be added at the top, false to be added at the bottom
 var prepend = true;
 
