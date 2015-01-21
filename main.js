@@ -61,18 +61,36 @@ function updateInnerHTML(){
 	}
 }
 
-var currentdate = new Date();
-var datetime =  "[" +	currentdate.getHours() + ":"  
-				+ currentdate.getMinutes() + "]";
+function date_time()
+{
+        date = new Date;
+        h = date.getHours();
+        if(h<10)
+        {
+                h = "0"+h;
+        }
+        m = date.getMinutes();
+        if(m<10)
+        {
+                m = "0"+m;
+        }
+        s = date.getSeconds();
+        if(s<10)
+        {
+                s = "0"+s;
+        }
+        var result = '['+h+':'+m+':'+s+']';
+        return result;
+}
 
 var MAX_LOG_MESSAGES = 10;
 //set this to true for new messages to be added at the top, false to be added at the bottom
 var prepend = true;
 
 function addMsg(message) {
-    var x = document.getElementById("messageBox");
+	var x = document.getElementById("messageBox");
     if(prepend) {
-        x.innerHTML = message + x.innerHTML; 
+        x.innerHTML = date_time() + message + x.innerHTML; 
     } else {
         x.innerHTML += message; 
     };
@@ -82,19 +100,13 @@ function addMsg(message) {
     var numMessages = logContents.length;
     
     if(numMessages > MAX_LOG_MESSAGES) {
-        // we've gone over the limit, remove the oldest message 
-        // (first message in the array)
-        // because the array is made from the string, the order of the string is _vital_
         if(prepend) {
-            // first message is at the bottom, ergo last element in the array   
             logContents.pop();
         } else {
-            // first element is at the top, ergo first element in the array
             logContents.shift();
         }
-        // make the array back into a single string
-        // and update the html contents of the messageBox div
-        var messageBoxContents = logContents.join("<br>");        
+        
+        var messageBoxContents = logContents.join("<br>");
         x.innerHTML = messageBoxContents;
     }
 }
@@ -368,7 +380,7 @@ function saveGame(how) {
 	};
 	localStorage.setItem("save",JSON.stringify(save));
 	console.log("Save local (This is just to make sure it works)");
-	addMsg(datetime + " Saved !</br>");
+	addMsg(" Saved !</br>");
 	}
 	//Autosave ==============================
 	else if(how=="auto"){
@@ -438,7 +450,7 @@ window.setInterval(function(){
 	coinAuto(badbroker * 8);
 	coinAuto(motel * 15);
 	
-	datetime
+	date_time();
 }, 1000);
 
 
