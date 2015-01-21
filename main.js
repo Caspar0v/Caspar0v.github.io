@@ -335,7 +335,7 @@ function unlockMotel(){
 //			SaveGame			//
 //////////////////////////////////
 var autoSave = true;
-var autoSaveTime = 10;
+var autoSaveTime = 30;
 var autoState;
 
 
@@ -348,7 +348,7 @@ function delSave(){
 autoSaveInterval=setInterval(function() {
 	autoSaveTime--;
 	if(autoSaveTime == 0) {
-		autoSaveTime = 10;
+		autoSaveTime = 30;
 		console.log("saved auto");
 		saveGame("local");
 	}
@@ -396,7 +396,7 @@ function saveGame(how) {
 			autoSaveInterval=setInterval(function() {
 				autoSaveTime--;
 				if(autoSaveTime == 0) {
-					autoSaveTime = 10;
+					autoSaveTime = 30;
 					saveGame("local");
 				}
 			},1000);
