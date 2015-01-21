@@ -1,21 +1,31 @@
 div.right{
 	position: fixed;
-	right: 5%;
+	right: 0;
 	margin: 75 0 0 0;
 	text-align: left;
 	border-style: solid; 
   	border-color: #2063c3; 
   	border-width: 0px;
-  	width: 200;
-  	height: 800;
+  	width: 25%;
+  	height: 85%;
+  	bottom: 0;
 }
 div.left{
 	position: absolute;
 	left: 0;
+	width: 75%;
+	height: 85%;
 	margin: 20 0 0 10;
 }
 div.messageBox {
 
+}
+div.header{
+	position: fixed;
+	text-align: center;
+	height: 15%;
+	width: 100%;
+	top: 10;
 }
 div.total {
 	margin: 10px auto;
