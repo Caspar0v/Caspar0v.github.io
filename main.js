@@ -295,7 +295,7 @@ function unlockSupermarket(){
 		document.getElementById('unlockSupermarket').style.display = "block";
 		document.getElementById('lockedSupermarket').style.display = "none";
 		document.getElementById('abilityPoints').innerHTML = abilityPoints;
-		addMsg("Unlocked Convenience Store.<br />");
+		addMsg(" Unlocked Convenience Store.<br />");
 		abilitySupermarket = true;
 	}
 }
@@ -306,7 +306,7 @@ function unlockCarwash(){
 		document.getElementById('unlockCarwash').style.display = "block";
 		document.getElementById('lockedCarwash').style.display = "none";
 		document.getElementById('abilityPoints').innerHTML = abilityPoints;
-		addMsg("Unlocked Carwash.<br />");
+		addMsg(" Unlocked Carwash.<br />");
 		abilityCarwash = true;
 	}
 }
@@ -316,7 +316,7 @@ function unlockBadbroker(){
 		document.getElementById('unlockBadbroker').style.display = "block";
 		document.getElementById('lockedBadbroker').style.display = "none";
 		document.getElementById('abilityPoints').innerHTML = abilityPoints;
-		addMsg("Unlocked Pennystock Broker.<br />");
+		addMsg(" Unlocked Pennystock Broker.<br />");
 		abilityBadbroker = true;
 	}
 }
@@ -326,7 +326,7 @@ function unlockMotel(){
 		document.getElementById('unlockMotel').style.display = "block";
 		document.getElementById('lockedMotel').style.display = "none";
 		document.getElementById('abilityPoints').innerHTML = abilityPoints;
-		addMsg("Unlocked the Motel.<br />");
+		addMsg(" Unlocked the Motel.<br />");
 		abilityMotel = true;
 	}
 }
