@@ -1,3 +1,45 @@
+//Click function
+var innerhtml = "document.getElementById";
+
+/*
+var coin= {
+		amount: 0,
+		multiplier: 1
+};
+
+var building= {
+		0: 0, //paperround
+		1: 0, //constore
+		2: 0, //carwash
+		3: 0, //badbroker
+		4: 0 //motel
+};
+
+var level= {
+		level: 1,
+		abilitypoints: 1,
+		xp: 0,
+		xpNext: 127
+};
+
+var ability= {
+		constore: false,
+		carwash: false,
+		badbroker: false,
+		motel: false
+};
+*/
+
+
+
+
+
+
+
+
+
+
+
 //////////////////////////////////////
 //			Basic Syntax			//
 //////////////////////////////////////
@@ -61,8 +103,7 @@ function updateInnerHTML(){
 	}
 }
 
-function date_time()
-{
+function date_time() {
         date = new Date;
         h = date.getHours();
         if(h<10)
@@ -123,7 +164,7 @@ var xpNumber = 0;
 //The Manual Click
 function coinClick(number){
     coin = coin + (number * power);
-    document.getElementById("coin").innerHTML = coin;
+    innerhtml('coin').innerHTML = coin;
 };
 
 //The autocoins function
