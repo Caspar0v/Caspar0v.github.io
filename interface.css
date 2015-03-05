@@ -35,7 +35,7 @@ div.tabs ul li{
 	width: 256px;
 	height: 64px;
 	z-index: 4;
-	background-color: black;
+	background: url(https://raw.githubusercontent.com/Caspar0v/Caspar0v.github.io/master/button.jpeg);
 	opacity: 0.4;
 }
 
