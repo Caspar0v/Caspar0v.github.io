@@ -39,6 +39,15 @@ div.tabs ul li{
 	opacity: 0.4;
 }
 
+#icon {
+	display: inline-block;
+	position: relative;
+	height: 64px;
+	width: 64px;
+
+}
+
+
 /*Does nothing yet */
 .building:hover {
 	width: 256px;
