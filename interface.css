@@ -31,7 +31,7 @@ div.tabs ul li{
 	float: none;
 }
 
-.building {
+div.building {
 	width: 256px;
 	height: 64px;
 	z-index: 4;
