@@ -43,7 +43,7 @@ div.building {
 	width: 256px;
 	height: 64px;
 	z-index: 4;
-	background: url(https://raw.githubusercontent.com/Caspar0v/Caspar0v.github.io/master/button.jpeg);
+	background: url(button.png);
 	opacity: 0.4;
 	list-style: none;
 }
