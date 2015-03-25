@@ -2,6 +2,13 @@ body {
 	overflow: hidden;
 }
 
+@font-face {
+font-family: 'myfont';
+font-style: normal;
+font-weight: normal;
+src: local('Myriad Pro Bold Condensed Italic'), url('MYRIADPRO-BOLDCONDIT.woff') format('woff');
+}
+
 div.menu a:link, a:visited a:link:active, a:visited:active{ 
     text-decoration: none;
     cursor: auto;
@@ -32,21 +39,35 @@ div.tabs ul li{
 }
 
 div.building {
+	font-family: 'myfont';
 	width: 256px;
 	height: 64px;
 	z-index: 4;
 	background: url(https://raw.githubusercontent.com/Caspar0v/Caspar0v.github.io/master/button.jpeg);
 	opacity: 0.4;
+	list-style: none;
 }
 
-#icon {
+div.building div.image{
 	display: inline-block;
+	float: left;
 	position: relative;
 	height: 64px;
 	width: 64px;
-
 }
 
+div.building div.text{
+	display: block;
+	float: left;
+	position: relative;
+	margin-top: 10px;
+	margin-left: 5px; 
+}
+
+#icon{
+	height: 64px;
+	width: 64px;
+}
 
 /*Does nothing yet */
 .building:hover {
