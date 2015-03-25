@@ -124,10 +124,10 @@ label:hover {
     animation: fadein 1s;
     position: absolute;
     top: 0px;
-    left:0px; 
+    left: 50px; 
     right:0px; 
     bottom:0px;
-    padding: 20px;
+    padding: 40px;
     width: 90%;
 }
 
@@ -190,7 +190,10 @@ div.mainleft {
     right:0px; 
     bottom:0px;
     position: absolute;
-	background-color: green;
+	background: url(bookbg.jpg);
+	background-size: 150% 100%;
+	background-position: -250 0;
+	background-repeat: no-repeat;
 }
 
 div.mainright {
