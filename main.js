@@ -36,6 +36,7 @@ var ability= {
 		motel: false
 };
 
+
 function buyBuilding(number, what){
 	console.log(price[what]);
 	console.log(building[what]);

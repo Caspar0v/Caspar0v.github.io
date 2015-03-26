@@ -1,5 +1,11 @@
 body {
 	overflow: hidden;
+	-webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 @font-face {
@@ -39,7 +45,6 @@ div.tabs ul li{
 }
 
 div.building {
-	font-family: 'myfont';
 	width: 256px;
 	height: 64px;
 	z-index: 4;
@@ -116,24 +121,98 @@ label:hover {
 
 #tab div.tab{
     display: none;
-    overflow: hidden;
+    overflow-x: hidden;
     -webkit-animation: fadein 1s; 
     -moz-animation: fadein 1s;
     -ms-animation: fadein 1s;
     -o-animation: fadein 1s;
     animation: fadein 1s;
     position: absolute;
-    top: 0px;
-    left: 50px; 
+    top: 40px;
+    left: 90px; 
     right:0px; 
     bottom:0px;
-    padding: 40px;
-    width: 90%;
+    width: 85%;
 }
 
 #tab div.tab:target {
    display: block;
 }
+
+.updateStatus {
+	position: absolute;
+	top: 20px;
+    left: 250px; 
+    right:0px; 
+    bottom:0px;
+}
+
+
+div.clexp {
+	float: right;
+	width: 25%;
+	height: 100%;
+	background-color: red;
+}
+
+/* Main content */
+div.main {
+	font-family: 'myfont';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	height: 85%;
+	width: 100%;
+	background-color: #4b25d6;
+}
+
+div.mainleft {
+	float: left;
+	width: 75%;
+	height: 100%;
+	top: 0px;
+    left:0px; 
+    right:0px; 
+    bottom:0px;
+    position: absolute;
+	background: url(bookbg.jpg);
+	background-size: 150% 100%;
+	background-position: -250 0;
+	background-repeat: no-repeat;
+}
+
+div.mainright {
+	float: right;
+	width: 25%;
+	height: 100%;
+	background-color: black;
+}
+
+div.coinplus {
+	float: top;
+	height: 15%;
+	background-color: white;
+}
+
+div.log {
+	position: relative;
+	color: white;
+	overflow: hidden;
+	float: bottom;
+	height: 85%;
+	background-color: black;
+}
+
+
+div.fadeOutTextbox {
+	z-index: 10;
+	position: absolute;
+	float: bottom;
+	height: 90%;
+	width: 100%;
+	background-image: linear-gradient(to bottom, transparent, black);
+}
+
 
 @keyframes fadein {
     from { opacity: 0; }
@@ -162,69 +241,4 @@ label:hover {
 @-o-keyframes fadein {
     from { opacity: 0; }
     to   { opacity: 1; }
-}
-
-div.clexp {
-	float: right;
-	width: 25%;
-	height: 100%;
-	background-color: red;
-}
-
-/* Main content */
-div.main {
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	height: 85%;
-	width: 100%;
-	background-color: #4b25d6;
-}
-
-div.mainleft {
-	float: left;
-	width: 75%;
-	height: 100%;
-	top: 0px;
-    left:0px; 
-    right:0px; 
-    bottom:0px;
-    position: absolute;
-	background: url(bookbg.jpg);
-	background-size: 150% 100%;
-	background-position: -250 0;
-	background-repeat: no-repeat;
-}
-
-div.mainright {
-	float: right;
-	width: 25%;
-	height: 100%;
-	background-color: orange;
-}
-
-div.coinplus {
-	float: top;
-	height: 15%;
-	background-color: white;
-}
-
-div.log {
-	font-family: 'myfont';
-	position: relative;
-	color: white;
-	overflow: hidden;
-	float: bottom;
-	height: 85%;
-	background-color: black;
-}
-
-
-div.fadeOutTextbox {
-	z-index: 10;
-	position: absolute;
-	float: bottom;
-	height: 90%;
-	width: 100%;
-	background-image: linear-gradient(to bottom, transparent, black);
 }
