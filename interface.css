@@ -210,7 +210,21 @@ div.coinplus {
 }
 
 div.log {
+	font-family: 'myfont';
+	position: relative;
+	color: white;
+	overflow: hidden;
 	float: bottom;
 	height: 85%;
-	background-color: blue;
+	background-color: black;
+}
+
+
+div.fadeOutTextbox {
+	z-index: 10;
+	position: absolute;
+	float: bottom;
+	height: 90%;
+	width: 100%;
+	background-image: linear-gradient(to bottom, transparent, black);
 }
