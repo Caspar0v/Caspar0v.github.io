@@ -156,7 +156,6 @@ div.clexp {
 	width: 25%;
 	height: 100%;
 	color: white;
-	background-color: transparent;
 }
 
 /* Main content */
@@ -167,7 +166,6 @@ div.main {
 	left: 0;
 	height: 85%;
 	width: 100%;
-	background-color: #4b25d6;
 }
 
 div.mainleft {
@@ -189,7 +187,6 @@ div.mainright {
 	float: right;
 	width: 25%;
 	height: 100%;
-	background-color: black;
 }
 
 div.coinplus {
