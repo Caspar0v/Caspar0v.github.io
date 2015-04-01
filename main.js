@@ -60,3 +60,20 @@ function coinClick(number){
     document.getElementById('coin').innerHTML = coin.amount;
 };
 
+function coinAuto(number){
+	coin.amount = coin.amount + (number);
+	document.getElementById('coin').innerHTML = coin.amount;
+};
+
+window.setInterval(function(){
+
+	coinAuto(building[0]);
+
+	date_time();
+}, 1000);
+
+
+
+
+
+
