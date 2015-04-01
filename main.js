@@ -1,7 +1,11 @@
 //To make sure your screens won't overlap at start page;
+
+
+
 function tbo(){
 	document.getElementById('begin').innerHTML = "";
 }
+
 
 
 var coin= {
@@ -36,14 +40,21 @@ var ability= {
 		motel: false
 };
 
+$(coinplus).click(function coinClick(number) {
+	alert(daosjdoasjld);
+	coin.amount += number * coin.mp;
+	$(coin).innerHTML = coin.amount;
+});
 
-function buyBuilding(number, what){
+
+
+/*function buyBuilding(number, what){
 	console.log(price[what]);
 	console.log(building[what]);
 	if(coin.amount >= price[what]){
 		coin.amount = coin.amount - price[what];
 		building[what] = building[what] + 1;
-		document.getElementById('coin').innerHTML = coin.amount;
+		coin.amount;
 		document.getElementById('paper').innerHTML = building[what];
 	}
 	else
@@ -52,25 +63,7 @@ function buyBuilding(number, what){
 	}
 
 
-}
-
-
-function coinClick(number){
-    coin.amount = coin.amount + (number * coin.mp);
-    document.getElementById('coin').innerHTML = coin.amount;
-};
-
-function coinAuto(number){
-	coin.amount = coin.amount + (number);
-	document.getElementById('coin').innerHTML = coin.amount;
-};
-
-window.setInterval(function(){
-
-	coinAuto(building[0]);
-
-	date_time();
-}, 1000);
+}*/
 
 
 
