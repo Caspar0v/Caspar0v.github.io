@@ -106,17 +106,20 @@ div.building div.text{
 label {
 	display: block;
 	text-align: center;
-	border-radius: 5px 5px 5px 5px;
+	border-radius: 2px;
 	padding: 25px;
 	font-size: 20;
 	width: 100px;
-	background: #C98F3C;
+	background: url(labels.png);
+	background-size: 100% 100%;
 	color: gray;
 }
 
 label:hover {
+	position: relative;
 	color: white;
-	background: #B37E35;
+	background: url(labels.png);
+	top: -3px;
 }
 
 #tab div.tab{
