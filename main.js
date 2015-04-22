@@ -54,6 +54,19 @@ $(document).ready(function (){
 	});
 });
 
+$(document).ready(function() {
+   $('label').mouseenter(function() {
+       $(this).animate({
+           top: '-=10px'
+       });
+   });
+   $('label').mouseleave(function() {
+       $(this).animate({
+           top: '+=10px'
+       }); 
+   });
+});
+
 function coinAuto(number){
 	coin.amount += number;
 	$('#coin').html(coin.amount);
