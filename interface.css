@@ -131,8 +131,8 @@ label:hover {
     -o-animation: fadein 1s;
     animation: fadein 1s;
     position: absolute;
-    top: 40px;
-    left: 90px; 
+    top: 9%;
+    left: 9%; 
     right:0px; 
     bottom:0px;
     width: 85%;
